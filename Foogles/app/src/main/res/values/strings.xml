@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Foogles</string>
+    <string name="Edit_Farm_Name">Edit</string>
+    <string name="Farm_Name">FoogleFarm 64</string>
+    <string name="Training_Button">Train</string>
+    <string name="Walk_Game">Walk-a-Foogles</string>
+    <string name="Marketplace_Button">Marketplace</string>
+    <string name="Edit_Foogle_Button">Edit Foogle</string>
+    <string name="Tournament_Button">Fooglympics</string>
+</resources>
