@@ -17,7 +17,8 @@
         android:text="@string/Farm_Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/Farm_Name" />
+        tools:text="@string/Farm_Name"
+        android:layout_marginLeft="16dp" />
 
     <Button
         android:id="@+id/button"
