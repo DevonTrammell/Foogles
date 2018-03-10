@@ -25,5 +25,25 @@ public class GameSelect extends AppCompatActivity{
 //                        | View.SYSTEM_UI_FLAG_FULLSCREEN
 //                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
     }
+    public void foogleClimb(View view) {
+        //Intent intent = new Intent(this, Climb.class);
+        //startActivity(intent);
+    }
+    public void foogleFish(View view) {
+        //Intent intent = new Intent(this, Fish.class);
+        //startActivity(intent);
+    }
+    public void foogleHop(View view) {
+        //Intent intent = new Intent(this, Hop.class);
+        //startActivity(intent);
+    }
+    public void foogleSwim(View view) {
+        //Intent intent = new Intent(this, Swim.class);
+        //startActivity(intent);
+    }
+    public void foogleWhack(View view) {
+        //Intent intent = new Intent(this, Whack.class);
+        //startActivity(intent);
+    }
 
 }
