@@ -12,6 +12,7 @@ import android.widget.EditText;
 
 public class GameSelect extends AppCompatActivity{
 
+    public static final String EXTRA_MESSAGE = "com.example.foogles.MESSAGE";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_select);
@@ -25,9 +26,11 @@ public class GameSelect extends AppCompatActivity{
 //                        | View.SYSTEM_UI_FLAG_FULLSCREEN
 //                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
     }
-    public void foogleClimb(View view) {
-        //Intent intent = new Intent(this, Climb.class);
-        //startActivity(intent);
+    public void getFoogleforClimb(View view) {
+        Intent intent = new Intent(this, ChooseFoogle.class);
+        String mode = "Climb";
+        intent.putExtra(EXTRA_MESSAGE, mode);
+        startActivity(intent);
     }
     public void foogleFish(View view) {
         //Intent intent = new Intent(this, Fish.class);
