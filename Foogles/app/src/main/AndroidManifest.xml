@@ -39,7 +39,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".ChooseFoogle"></activity>
+        <activity android:name=".ChooseFoogle">
+            android:parentActivityName=".GameSelect">
+
+            <!-- The meta-data tag is required if you support API level 15 or lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".GameSelect" />
+        </activity>
+        <activity android:name=".Rewards"></activity>
     </application>
 
 </manifest>

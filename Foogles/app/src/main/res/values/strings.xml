@@ -3,14 +3,16 @@
     <string name="Edit_Farm_Name">Edit</string>
     <string name="Farm_Name">FoogleFarm 64</string>
     <string name="Training_Button">Train</string>
-    <string name="Walk_Game">Walk-a-Foogles</string>
+    <string name="Walk_Game">Walk-a-Foogle</string>
     <string name="Marketplace_Button">Marketplace</string>
     <string name="Edit_Foogle_Button">Edit Foogle</string>
     <string name="Tournament_Button">Fooglympics</string>
+    <string name="Confirm_Button">Confirm</string>
+    <string name="Foogle_Fhrase_1">Foogtacular!</string>
 
     <string name="Title">Game Select</string>
     <string name="Foogle_Climb">Foogle Climb</string>
-    <string name="Foogle_Fish">Fish</string>
+    <string name="Foogle_Fish">Foogle Fish</string>
     <string name="Foogle_Hop">Foogle Hop</string>
     <string name="Foogle_Swim">Foogle Swim</string>
     <string name="Foogle_Whack">Whack-a-Foogle</string>
@@ -21,4 +23,10 @@
     <string name="Name">Enter a Name</string>
     <string name="Save">Save</string>
 
+    <string-array name="Foogle_Names">
+        <item>FoogMan</item>
+        <item>Chuck</item>
+        <item>RadishThing</item>
+        <item>HowDidIEvenGetHere?</item>
+    </string-array>
 </resources>

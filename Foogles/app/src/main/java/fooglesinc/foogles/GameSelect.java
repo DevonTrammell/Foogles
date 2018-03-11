@@ -28,25 +28,33 @@ public class GameSelect extends AppCompatActivity{
     }
     public void getFoogleforClimb(View view) {
         Intent intent = new Intent(this, ChooseFoogle.class);
-        String mode = "Climb";
+        String mode = "Foogle Climb";
         intent.putExtra(EXTRA_MESSAGE, mode);
         startActivity(intent);
     }
-    public void foogleFish(View view) {
-        //Intent intent = new Intent(this, Fish.class);
-        //startActivity(intent);
+    public void getFooglefirFish(View view) {
+        Intent intent = new Intent(this, ChooseFoogle.class);
+        String mode = "Foogle Fishing";
+        intent.putExtra(EXTRA_MESSAGE, mode);
+        startActivity(intent);
     }
-    public void foogleHop(View view) {
-        //Intent intent = new Intent(this, Hop.class);
-        //startActivity(intent);
+    public void getFoogleforHop(View view) {
+        Intent intent = new Intent(this, ChooseFoogle.class);
+        String mode = "Foogle Hop";
+        intent.putExtra(EXTRA_MESSAGE, mode);
+        startActivity(intent);
     }
-    public void foogleSwim(View view) {
-        //Intent intent = new Intent(this, Swim.class);
-        //startActivity(intent);
+    public void getFoogleforSwim(View view) {
+        Intent intent = new Intent(this, ChooseFoogle.class);
+        String mode = "Foogle Swim";
+        intent.putExtra(EXTRA_MESSAGE, mode);
+        startActivity(intent);
     }
-    public void foogleWhack(View view) {
-        //Intent intent = new Intent(this, Whack.class);
-        //startActivity(intent);
+    public void getFoogleforWhack(View view) {
+        Intent intent = new Intent(this, ChooseFoogle.class);
+        String mode = "Whack-a-Foogle";
+        intent.putExtra(EXTRA_MESSAGE, mode);
+        startActivity(intent);
     }
 
 }
