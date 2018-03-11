@@ -29,4 +29,10 @@
         <item>RadishThing</item>
         <item>HowDidIEvenGetHere?</item>
     </string-array>
+    <string name="title_activity_foogle_fish">foogle_fish</string>
+    <string name="Whack">Whack!</string>
+    <string name="Left">Left</string>
+    <string name="Right">Right</string>
+    <string name="Jump">Jump</string>
+    <string name="Catch">Catch</string>
 </resources>
