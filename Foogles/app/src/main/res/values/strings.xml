@@ -30,6 +30,7 @@
         <item>HowDidIEvenGetHere?</item>
     </string-array>
 
+
     <string-array name="Colors">
         <item>Red</item>
         <item>Blue</item>
@@ -53,4 +54,12 @@
         <item>Glasses</item>
         <item>Mustache</item>
     </string-array>
+=======
+    <string name="title_activity_foogle_fish">foogle_fish</string>
+    <string name="Whack">Whack!</string>
+    <string name="Left">Left</string>
+    <string name="Right">Right</string>
+    <string name="Jump">Jump</string>
+    <string name="Catch">Catch</string>
+
 </resources>

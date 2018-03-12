@@ -52,7 +52,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".GameSelect" />
         </activity>
-        <activity android:name=".Rewards"></activity>
+        <activity android:name=".Rewards" />
+        <activity android:name=".foogle_climb" />
+        <activity android:name=".foogle_swim" />
+        <activity android:name=".foogle_hop" />
+        <activity android:name=".whack_a_foogle" />
+        <activity android:name=".foogle_fish"></activity>
     </application>
 
 </manifest>
