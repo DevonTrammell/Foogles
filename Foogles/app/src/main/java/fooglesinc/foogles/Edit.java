@@ -1,5 +1,6 @@
 package fooglesinc.foogles;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +14,13 @@ import java.util.List;
 
 public class Edit extends AppCompatActivity {
 
-    @Override
+    public static Spinner editFoogleColor;
+    public static Spinner editFoogleCostume;
+    public static Spinner editFoogleMisc;
+    ArrayAdapter<CharSequence> adapter;
+
+
+    public static final String EXTRA_MESSAGE = "com.example.foogles.MESSAGE";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
@@ -29,40 +36,60 @@ public class Edit extends AppCompatActivity {
 //                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
         // Spinner element
-//    Spinner spinner = (Spinner) findViewById(R.id.spinner_Color);
-//
-//    // Spinner click listener
-//        spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
-//
-//    // Spinner Drop down elements
-//    List<String> categories = new ArrayList<String>();
-//        categories.add("Yellow");
-//        categories.add("Blue");
-//        categories.add("Red");
-//        categories.add("Orange");
-//        categories.add("Green");
-//        categories.add("Purple");
-//
-//    // Creating adapter for spinner
-//    ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
-//
-//    // Drop down layout style - list view with radio button
-//        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//
-//    // attaching data adapter to spinner
-//        spinner.setAdapter(dataAdapter);
-//
-//}
-//
-//    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//        // On selecting a spinner item
-//        String item = parent.getItemAtPosition(position).toString();
-//
-//        // Showing selected spinner item
-//        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
-//    }
-//    public void onNothingSelected(AdapterView<?> arg0) {
-//
-//    }
+      editFoogleColor = (Spinner) findViewById(R.id.spinner_Color);
+        adapter = ArrayAdapter.createFromResource(this,R.array.Colors,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        editFoogleColor.setAdapter(adapter);
+        editFoogleColor.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+                Toast.makeText(getBaseContext(),adapterView.getItemAtPosition(position)+" selected",Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        editFoogleCostume = (Spinner) findViewById(R.id.spinner_costume);
+        adapter = ArrayAdapter.createFromResource(this,R.array.Costumes,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        editFoogleCostume.setAdapter(adapter);
+        editFoogleCostume.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+                Toast.makeText(getBaseContext(),adapterView.getItemAtPosition(position)+" selected",Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        editFoogleMisc = (Spinner) findViewById(R.id.spinner_misc);
+        adapter = ArrayAdapter.createFromResource(this,R.array.Misc,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        editFoogleMisc.setAdapter(adapter);
+        editFoogleMisc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+                Toast.makeText(getBaseContext(),adapterView.getItemAtPosition(position)+" selected",Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
+
+    public void saveFoogle(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        String mode = "Save";
+        intent.putExtra(EXTRA_MESSAGE, mode);
+        startActivity(intent);
     }
 }
+

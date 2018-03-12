@@ -54,5 +54,6 @@
         android:onClick="goToGame"
         android:text="@string/Confirm_Button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="8dp" />
 </android.support.constraint.ConstraintLayout>
