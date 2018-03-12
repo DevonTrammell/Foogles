@@ -29,4 +29,28 @@
         <item>RadishThing</item>
         <item>HowDidIEvenGetHere?</item>
     </string-array>
+
+    <string-array name="Colors">
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>Orange</item>
+    </string-array>
+
+    <string-array name="Costumes">
+        <item>None</item>
+        <item>Kung Foogle</item>
+        <item>IT Foogle</item>
+        <item>Flower Pot Foogle</item>
+        <item>FoogleMan</item>
+    </string-array>
+
+    <string-array name="Misc">
+        <item>None</item>
+        <item>Hat</item>
+        <item>Scarf</item>
+        <item>Glasses</item>
+        <item>Mustache</item>
+    </string-array>
 </resources>
