@@ -43,7 +43,7 @@ public class Edit extends AppCompatActivity {
         editFoogleColor.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                Toast.makeText(getBaseContext(),adapterView.getItemAtPosition(position)+" selected",Toast.LENGTH_LONG).show();
+                //Toast.makeText(getBaseContext(),adapterView.getItemAtPosition(position)+" selected",Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -59,7 +59,7 @@ public class Edit extends AppCompatActivity {
         editFoogleCostume.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                Toast.makeText(getBaseContext(),adapterView.getItemAtPosition(position)+" selected",Toast.LENGTH_LONG).show();
+                //Toast.makeText(getBaseContext(),adapterView.getItemAtPosition(position)+" selected",Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -75,7 +75,7 @@ public class Edit extends AppCompatActivity {
         editFoogleMisc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                Toast.makeText(getBaseContext(),adapterView.getItemAtPosition(position)+" selected",Toast.LENGTH_LONG).show();
+                //Toast.makeText(getBaseContext(),adapterView.getItemAtPosition(position)+" selected",Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -87,8 +87,8 @@ public class Edit extends AppCompatActivity {
 
     public void saveFoogle(View view) {
         Intent intent = new Intent(this, MainActivity.class);
-        String mode = "Save";
-        intent.putExtra(EXTRA_MESSAGE, mode);
+        //String mode = "Save";
+        //intent.putExtra(EXTRA_MESSAGE, mode);
         startActivity(intent);
     }
 }

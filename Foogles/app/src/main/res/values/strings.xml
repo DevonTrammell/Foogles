@@ -9,6 +9,12 @@
     <string name="Tournament_Button">Fooglympics</string>
     <string name="Confirm_Button">Confirm</string>
     <string name="Foogle_Fhrase_1">Foogtacular!</string>
+    <string name="Main_Menu">Back to Main</string>
+    <string name="Okay_Button">Okay...</string>
+    <string name="Walk_Options">Walk Options</string>
+    <string name="Prompt_Where">Where would you like to walk to?</string>
+    <string name="Prompt_When">When would you like to leave?</string>
+    <string name="Prompt_Pet">Would you like to pet your Foogle?</string>
 
     <string name="Title">Game Select</string>
     <string name="Foogle_Climb">Foogle Climb</string>
@@ -28,6 +34,27 @@
         <item>Chuck</item>
         <item>RadishThing</item>
         <item>HowDidIEvenGetHere?</item>
+    </string-array>
+
+    <string-array name="Walk_Locations">
+        <item>Valley</item>
+        <item>College</item>
+        <item>Beach</item>
+        <item>Spring Break</item>
+    </string-array>
+
+    <string-array name="Walk_Times">
+        <item>Morning</item>
+        <item>Midday</item>
+        <item>Late</item>
+        <item>Now!</item>
+    </string-array>
+
+    <string-array name="Pet_Options">
+        <item>Yes</item>
+        <item>YES</item>
+        <item>MORE YES!</item>
+        <item>WHY WOULD YOU LOOK FOR ANYTHING ELSE?!</item>
     </string-array>
 
 
@@ -54,12 +81,16 @@
         <item>Glasses</item>
         <item>Mustache</item>
     </string-array>
-=======
+
     <string name="title_activity_foogle_fish">foogle_fish</string>
     <string name="Whack">Whack!</string>
     <string name="Left">Left</string>
     <string name="Right">Right</string>
     <string name="Jump">Jump</string>
     <string name="Catch">Catch</string>
+    <string name="View_Switch">New View</string>
+    <string name="Add_Foogle">Create Foogle!</string>
+    <string name="Trophies_Button">Trophies!</string>
+    <string name="todo">TODO</string>
 
 </resources>

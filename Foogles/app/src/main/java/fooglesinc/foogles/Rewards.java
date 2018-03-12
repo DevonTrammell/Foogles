@@ -3,6 +3,7 @@ package fooglesinc.foogles;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -15,7 +16,7 @@ public class Rewards extends AppCompatActivity {
         setContentView(R.layout.activity_rewards);
 
         Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        String message = intent.getStringExtra(MainActivity.FOOGLE_NAME);
 
         TextView textView = findViewById(R.id.textView3);
         String displayedMessage = message+"'s stat(s) have changed!";
@@ -38,5 +39,10 @@ public class Rewards extends AppCompatActivity {
             }
         }
         randomStats.setText(changes);
+    }
+    public void backToMain(View view)
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

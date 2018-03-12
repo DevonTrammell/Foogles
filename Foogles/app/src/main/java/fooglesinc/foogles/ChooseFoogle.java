@@ -74,11 +74,19 @@ public class ChooseFoogle extends AppCompatActivity {
             //intent = new Intent(this,FoogleWhack.class);//this will be FoogleHop.class then go to rewards.
             intent = new Intent(this,Rewards.class);//this will be FoogleHop.class then go to rewards.
         }
+        else if(message.equals("Edit is not a game"))
+        {
+            intent = new Intent(this,Edit.class);
+        }
+        else if(message.equals("Walk"))
+        {
+            intent = new Intent(this,Walk.class);//this will be FoogleHop.class then go to rewards.
+        }
         else
         {
             intent = new Intent(this,Rewards.class);//this will be FoogleHop.class then go to rewards.
         }
-        intent.putExtra(MainActivity.EXTRA_MESSAGE,selectFoogle.getSelectedItem().toString());
+        intent.putExtra(MainActivity.FOOGLE_NAME,selectFoogle.getSelectedItem().toString());
         startActivity(intent);
     }
 }
