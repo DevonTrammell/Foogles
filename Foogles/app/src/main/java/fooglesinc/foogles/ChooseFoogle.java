@@ -51,28 +51,28 @@ public class ChooseFoogle extends AppCompatActivity {
         if(message.equals("Foogle Climb"))
         {
             // these class files need to be made and implemented before we can do all this jazz.
-            //intent = new Intent(this,FoogleClimb.class);//this will be FoogleHop.class then go to rewards.
-            intent = new Intent(this,Rewards.class);//this will be FoogleHop.class then go to rewards.
+            intent = new Intent(this,foogle_climb.class);//this will be FoogleHop.class then go to rewards.
+            //intent = new Intent(this,Rewards.class);//this will be FoogleHop.class then go to rewards.
         }
-        else if(message.equals("Foogle Fish"))
+        else if(message.equals("Foogle Fishing"))
         {
-            //intent = new Intent(this,FoogleFish.class);//this will be FoogleHop.class then go to rewards.
-            intent = new Intent(this,Rewards.class);//this will be FoogleHop.class then go to rewards.
+            intent = new Intent(this,foogle_fish.class);//this will be FoogleHop.class then go to rewards.
+            //intent = new Intent(this,Rewards.class);//this will be FoogleHop.class then go to rewards.
         }
         else if(message.equals("Foogle Hop"))
         {
-            //intent = new Intent(this,FoogleHop.class);//this will be FoogleHop.class then go to rewards.
-            intent = new Intent(this,Rewards.class);//this will be FoogleHop.class then go to rewards.
+            intent = new Intent(this,foogle_hop.class);//this will be FoogleHop.class then go to rewards.
+            //intent = new Intent(this,Rewards.class);//this will be FoogleHop.class then go to rewards.
         }
         else if(message.equals("Foogle Swim"))
         {
-            //intent = new Intent(this,FoogleSwim.class);//this will be FoogleHop.class then go to rewards.
-            intent = new Intent(this,Rewards.class);//this will be FoogleHop.class then go to rewards.
+            intent = new Intent(this,foogle_swim.class);//this will be FoogleHop.class then go to rewards.
+            //intent = new Intent(this,Rewards.class);//this will be FoogleHop.class then go to rewards.
         }
         else if(message.equals("Whack-a-Foogle"))
         {
-            //intent = new Intent(this,FoogleWhack.class);//this will be FoogleHop.class then go to rewards.
-            intent = new Intent(this,Rewards.class);//this will be FoogleHop.class then go to rewards.
+            intent = new Intent(this,whack_a_foogle.class);//this will be FoogleHop.class then go to rewards.
+            //intent = new Intent(this,Rewards.class);//this will be FoogleHop.class then go to rewards.
         }
         else if(message.equals("Edit is not a game"))
         {

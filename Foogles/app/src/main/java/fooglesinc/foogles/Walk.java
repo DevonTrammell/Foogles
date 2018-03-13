@@ -25,8 +25,8 @@ public class Walk extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_walk);
 
-        //Intent intent = getIntent();
-        //message = intent.getStringExtra(MainActivity.FOOGLE_NAME);
+        Intent intent = getIntent();
+        message = intent.getStringExtra(MainActivity.FOOGLE_NAME);
 
         selectWhere = (Spinner)findViewById(R.id.spinner2);
         adapterWhere = ArrayAdapter.createFromResource(this,R.array.Walk_Locations,android.R.layout.simple_spinner_item);
@@ -35,7 +35,7 @@ public class Walk extends AppCompatActivity {
         selectWhere.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                Toast.makeText(getBaseContext(),adapterView.getItemAtPosition(position)+" selected",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getBaseContext(),adapterView.getItemAtPosition(position)+" selected",Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -73,5 +73,10 @@ public class Walk extends AppCompatActivity {
 
             }
         });
+    }
+    public void rewardFoogle(View view) {
+        Intent intent = new Intent(this, Rewards.class);
+        intent.putExtra(MainActivity.FOOGLE_NAME, message);
+        startActivity(intent);
     }
 }

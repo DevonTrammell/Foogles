@@ -42,7 +42,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:onClick="getFooglefirFish"
+        android:onClick="getFoogleforFish"
         android:text="@string/Foogle_Fish"
         app:layout_constraintEnd_toEndOf="@+id/button3"
         app:layout_constraintHorizontal_bias="1.0"

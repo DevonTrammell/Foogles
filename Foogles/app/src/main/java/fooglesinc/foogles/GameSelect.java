@@ -32,7 +32,7 @@ public class GameSelect extends AppCompatActivity{
         intent.putExtra(EXTRA_MESSAGE, mode);
         startActivity(intent);
     }
-    public void getFooglefirFish(View view) {
+    public void getFoogleforFish(View view) {
         Intent intent = new Intent(this, ChooseFoogle.class);
         String mode = "Foogle Fishing";
         intent.putExtra(EXTRA_MESSAGE, mode);

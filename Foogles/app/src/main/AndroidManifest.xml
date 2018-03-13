@@ -53,41 +53,11 @@
                 android:value=".GameSelect" />
         </activity>
         <activity android:name=".Rewards" />
-        <activity android:name=".foogle_climb">
-            android:parentActivityName=".MainActivity">
-            <!-- The meta-data tag is required if you support API level 15 or lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ChooseFoogle" />
-        </activity>
-        <activity android:name=".foogle_swim">
-            android:parentActivityName=".MainActivity">
-            <!-- The meta-data tag is required if you support API level 15 or lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ChooseFoogle" />
-        </activity>
-        <activity android:name=".foogle_hop">
-            android:parentActivityName=".MainActivity">
-            <!-- The meta-data tag is required if you support API level 15 or lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ChooseFoogle" />
-        </activity>
-        <activity android:name=".whack_a_foogle">
-            android:parentActivityName=".MainActivity">
-            <!-- The meta-data tag is required if you support API level 15 or lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ChooseFoogle" />
-        </activity>
-        <activity android:name=".foogle_fish">
-            android:parentActivityName=".MainActivity">
-            <!-- The meta-data tag is required if you support API level 15 or lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ChooseFoogle" />
-        </activity>
+        <activity android:name=".foogle_climb"></activity>
+        <activity android:name=".foogle_swim"></activity>
+        <activity android:name=".foogle_hop"></activity>
+        <activity android:name=".whack_a_foogle"></activity>
+        <activity android:name=".foogle_fish"></activity>
         <activity android:name=".Trophy_Display">
             android:parentActivityName=".MainActivity">
             <!-- The meta-data tag is required if you support API level 15 or lower -->
@@ -95,13 +65,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".Walk">
-            android:parentActivityName=".MainActivity">
-            <!-- The meta-data tag is required if you support API level 15 or lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ChooseFoogle" />
-        </activity>
+        <activity android:name=".Walk"></activity>
         <activity android:name=".CreateFoogle">
             android:parentActivityName=".MainActivity">
             <!-- The meta-data tag is required if you support API level 15 or lower -->

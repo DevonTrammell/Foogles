@@ -98,5 +98,18 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="@+id/spinner3"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        android:layout_marginLeft="8dp" />
+
+    <Button
+        android:id="@+id/button24"
+        android:layout_width="185dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="8dp"
+        android:onClick="rewardFoogle"
+        android:text="@string/Go_Walk"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner4" />
 </android.support.constraint.ConstraintLayout>

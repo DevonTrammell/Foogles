@@ -28,12 +28,21 @@
     <string name="Really_Big_League">Really Big League</string>
     <string name="Name">Enter a Name</string>
     <string name="Save">Save</string>
+    <string name="Go_Walk">Let\'s Go!</string>
 
     <string-array name="Foogle_Names">
         <item>FoogMan</item>
         <item>Chuck</item>
         <item>RadishThing</item>
         <item>HowDidIEvenGetHere?</item>
+    </string-array>
+
+    <string-array name="Foogle_Faces">
+        <item>( ͡° ͜ʖ ͡°)</item>
+        <item>(⊙︿⊙✿)</item>
+        <item>¯\_(ツ)_/¯</item>
+        <item>(づ｡◕‿‿◕｡)づ</item>
+        <item>ಥ_ಥ</item>
     </string-array>
 
     <string-array name="Walk_Locations">

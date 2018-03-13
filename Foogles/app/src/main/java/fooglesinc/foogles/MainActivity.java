@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText FoogleRanchName;
 
-    int imageIds[] = {R.mipmap.ic_foogle_foreground,R.mipmap.ic_foogle_round,R.mipmap.ic_foogle_foreground};
+    int imageIds[] = {R.mipmap.ic_sticks,R.mipmap.ic_foogle_foreground,R.mipmap.ic_foogle_house,R.mipmap.ic_foogle_danger,R.mipmap.ic_sleep,R.mipmap.ic_abug};
     int count = imageIds.length;
     int currentIndex = 0;
 
@@ -94,8 +94,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void marketplace(View view){
-        //Intent intent = new Intent(this, Marketplace.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, Market.class);
+        startActivity(intent);
     }
     public void editFoogle(View view){
         Intent intent = new Intent(this, ChooseFoogle.class);
@@ -109,6 +109,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void trophyCase(View view){
         Intent intent = new Intent(this,Trophy_Display.class);
+        startActivity(intent);
+    }
+    public void createFoogle(View view){
+        Intent intent = new Intent(this,CreateFoogle.class);
         startActivity(intent);
     }
 }
