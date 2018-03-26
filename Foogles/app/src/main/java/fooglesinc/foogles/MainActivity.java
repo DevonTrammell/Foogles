@@ -2,6 +2,7 @@ package fooglesinc.foogles;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -17,6 +18,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
+import static android.media.MediaPlayer.*;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String EXTRA_MESSAGE = "com.example.foogles.MESSAGE";
@@ -26,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     public static final String PET_STATUS = "com.example.foogles.PET";
     private ImageSwitcher simpleImageSwitcher;
     Button btnNext;
-
     EditText FoogleRanchName;
 
     int imageIds[] = {R.mipmap.ic_sticks,R.mipmap.ic_foogle_foreground,R.mipmap.ic_foogle_house,R.mipmap.ic_foogle_danger,R.mipmap.ic_sleep,R.mipmap.ic_abug};
@@ -37,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        MediaPlayer ring= create(MainActivity.this,R.raw.mariothemesong);
+        ring.start();
+        ring.setLooping(true);
+
+
 
         btnNext = (Button) findViewById(R.id.button8);
         simpleImageSwitcher = (ImageSwitcher) findViewById(R.id.simpleImageSwitcher);
