@@ -1,63 +1,84 @@
 package fooglesinc.foogles;
 
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.view.Menu;
+import android.view.MenuItem;
+
+
 
 public class CreateFoogle extends AppCompatActivity {
 
-
-    public static String foogleName;
-
-    public static Spinner selectColor;
-    ArrayAdapter<CharSequence> adapterColor;
-    public static Spinner selectFace;
-    ArrayAdapter<CharSequence> adapterFace;
-
+    TextView idView;
+    TextView productBox;
+    TextView quantityBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_foogle);
 
-        selectColor = (Spinner)findViewById(R.id.spinner2);
-        adapterColor = ArrayAdapter.createFromResource(this,R.array.Colors,android.R.layout.simple_spinner_item);
-        adapterColor.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        selectColor.setAdapter(adapterColor);
-        selectColor.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                //Toast.makeText(getBaseContext(),adapterView.getItemAtPosition(position)+" selected",Toast.LENGTH_SHORT).show();
-            }
+        idView = (TextView) findViewById(R.id.FoogleID);
+        productBox = (EditText) findViewById(R.id.EditName);
+        quantityBox =
+                (EditText) findViewById(R.id.FoogleEnergy);
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-        selectFace = (Spinner)findViewById(R.id.spinner3);
-        adapterFace = ArrayAdapter.createFromResource(this,R.array.Foogle_Faces,android.R.layout.simple_spinner_item);
-        adapterFace.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        selectFace.setAdapter(adapterFace);
-        selectFace.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                //Toast.makeText(getBaseContext(),adapterView.getItemAtPosition(position)+" selected",Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
     }
+
+    public void newProduct (View view) {
+        MyDBHandler dbHandler = new MyDBHandler(this, null, null, 1);
+
+        int quantity =
+                Integer.parseInt(quantityBox.getText().toString());
+
+        Foogle foogle =
+                new Foogle(productBox.getText().toString(), quantity);
+
+        dbHandler.addFoogle(foogle);
+        productBox.setText("");
+        quantityBox.setText("");
+    }
+
+    public void lookupProduct (View view) {
+        MyDBHandler dbHandler = new MyDBHandler(this, null, null, 1);
+
+        Foogle foogle =
+                dbHandler.findFoogle(productBox.getText().toString());
+
+        if (foogle != null) {
+            idView.setText(String.valueOf(foogle.get_id()));
+
+            quantityBox.setText(String.valueOf(foogle.getEnergy()));
+        } else {
+            idView.setText("No Match Found");
+        }
+    }
+    public void removeProduct (View view) {
+        MyDBHandler dbHandler = new MyDBHandler(this, null,
+                null, 1);
+
+        boolean result = dbHandler.deleteFoogle(
+                productBox.getText().toString());
+
+        if (result)
+        {
+            idView.setText("Record Deleted");
+            productBox.setText("");
+            quantityBox.setText("");
+        }
+        else
+            idView.setText("No Match Found");
+    }
+
     public void backToMain(View view)
     {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
 }

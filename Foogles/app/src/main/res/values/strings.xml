@@ -101,5 +101,8 @@
     <string name="Add_Foogle">Create Foogle!</string>
     <string name="Trophies_Button">Trophies!</string>
     <string name="todo">TODO</string>
+    <string name="add_string">AddString</string>
+    <string name="find_string">FindString</string>
+    <string name="delete_string">DeleteString</string>
 
 </resources>

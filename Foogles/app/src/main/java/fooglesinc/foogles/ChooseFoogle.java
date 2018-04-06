@@ -1,5 +1,7 @@
 package fooglesinc.foogles;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -9,6 +11,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+
+import static android.app.PendingIntent.getActivity;
 
 public class ChooseFoogle extends AppCompatActivity {
 
@@ -24,6 +30,10 @@ public class ChooseFoogle extends AppCompatActivity {
 
         Intent intent = getIntent();
         message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+
+        //SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        //ArrayList<String> names = sharedPref.getString();
+
 
         TextView textView = findViewById(R.id.textView);
         String displayedMessage = "Please choose a Foogle to play "+message;

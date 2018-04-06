@@ -7,7 +7,7 @@
     tools:context="fooglesinc.foogles.CreateFoogle">
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/EditNameTitle"
         android:layout_width="253dp"
         android:layout_height="50dp"
         android:layout_marginEnd="8dp"
@@ -22,114 +22,107 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="372dp"
-        android:layout_height="35dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Choose a Color for your foogle!"
-        android:textAlignment="center"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView6"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="366dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="36dp"
-        android:text="Choose a face for your foogle!"
-        android:textAlignment="center"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
-
-    <Spinner
-        android:id="@+id/spinner3"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintEnd_toEndOf="@+id/spinner2"
-        app:layout_constraintHorizontal_bias="0.583"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/spinner2"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-    <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/FoogleName"
         android:layout_width="365dp"
         android:layout_height="33dp"
-        android:layout_marginTop="36dp"
-        android:text="Now let's name your Foogle!"
+        android:layout_marginEnd="271dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginTop="26dp"
+        android:text="Name Your Foogle!"
         android:textAlignment="center"
         android:textSize="22sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner3" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditNameTitle" />
 
     <Button
-        android:id="@+id/button24"
+        android:id="@+id/ConfirmButton"
         android:layout_width="185dp"
         android:layout_height="51dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginBottom="43dp"
+        android:layout_marginEnd="355dp"
+        android:layout_marginStart="215dp"
+        android:layout_marginTop="165dp"
         android:onClick="backToMain"
         android:text="@string/Confirm_Button"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/FoogleEnergy" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/EditName"
         android:layout_width="290dp"
-        android:layout_height="49dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="299dp"
+        android:layout_marginStart="319dp"
+        android:layout_marginTop="30dp"
         android:cursorVisible="false"
         android:ems="10"
         android:inputType="textPersonName"
         android:singleLine="true"
-        android:text="Name Plz"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
-        tools:text="Name Plz" />
+        app:layout_constraintTop_toBottomOf="@+id/FoogleName" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="8dp"
-        android:text="@string/Edit_Farm_Name"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/editText"
-        tools:text="@string/Edit_Farm_Name"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="8dp" />
+        android:layout_marginEnd="176dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="274dp"
+        android:onClick="newProduct"
+        android:text="@string/add_string"
+        app:layout_constraintEnd_toStartOf="@+id/FoogleEnergy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="34dp"
+        android:onClick="lookupProduct"
+        android:text="@string/find_string"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:onClick="removeProduct"
+        android:text="@string/delete_string"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <TextView
+        android:id="@+id/FoogleID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="252dp"
+        android:layout_marginEnd="80dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/FoogleEnergy"
+        android:layout_width="294dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="160dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="39dp"
+        android:focusable="true"
+        app:layout_constraintEnd_toStartOf="@+id/FoogleID"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/EditName" />
+
 
 </android.support.constraint.ConstraintLayout>
