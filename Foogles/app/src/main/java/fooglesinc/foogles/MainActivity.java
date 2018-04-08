@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MediaPlayer ring = create(MainActivity.this, R.raw.mariothemesong);
-        ring.start();
-        ring.setLooping(true);
+        //MediaPlayer ring = create(MainActivity.this, R.raw.mariothemesong);
+        //ring.start();
+        //ring.setLooping(true);
 
 
         btnNext = (Button) findViewById(R.id.button8);

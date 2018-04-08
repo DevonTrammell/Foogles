@@ -1,11 +1,14 @@
 package fooglesinc.foogles;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Trophy_Display extends AppCompatActivity {
 
+    private ImageView walking;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,6 +19,14 @@ public class Trophy_Display extends AppCompatActivity {
         textView = findViewById(R.id.textView7);
         displayedMessage = "IF I HAD ONE!";
         textView.setText(displayedMessage);
+
+        // setting up a basic animation
+        walking = (ImageView) findViewById(R.id.walking_anim);
+        walking.setBackgroundResource(R.drawable.walk_anim);
+        AnimationDrawable WeWalking = (AnimationDrawable) walking.getBackground();
+
+        WeWalking.stop();
+        WeWalking.start();
 
     }
 }
