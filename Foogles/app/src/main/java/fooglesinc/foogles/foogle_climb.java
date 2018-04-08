@@ -1,9 +1,13 @@
 package fooglesinc.foogles;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 public class foogle_climb extends AppCompatActivity {
 
@@ -16,6 +20,17 @@ public class foogle_climb extends AppCompatActivity {
 
         Intent intent = getIntent();
         message = intent.getStringExtra(MainActivity.FOOGLE_NAME);
+
+//        new CountDownTimer(30000, 1000) {
+//
+//            public void onTick(long millisUntilFinished) {
+//               // mTextField.setText("seconds remaining: " + millisUntilFinished / 1000);
+//            }
+//
+//            public void onFinish() {
+//                //mTextField.setText("done!");
+//            }
+//        }.start();
     }
     public void rewardFoogle(View view)
     {
@@ -23,4 +38,61 @@ public class foogle_climb extends AppCompatActivity {
         intent.putExtra(MainActivity.FOOGLE_NAME, message);
         startActivity(intent);
     }
+
+
+
+
+    public void leftClick(View view) {
+
+        final ImageView leftAnim = (ImageView) findViewById(R.id.walking_anim2);
+
+        leftAnim.setBackgroundResource(R.drawable.walk_anim);
+
+        AnimationDrawable WeWalking = (AnimationDrawable) leftAnim.getBackground();
+
+        WeWalking.stop();
+        WeWalking.start();
+
+
+        final ImageView rightAnim = (ImageView) findViewById(R.id.walking_anim3);
+
+        rightAnim.setBackgroundResource(R.drawable.walk_anim);
+
+        AnimationDrawable NoWalking = (AnimationDrawable) leftAnim.getBackground();
+
+        NoWalking.stop();
+        NoWalking.start();
+
+        leftAnim.setVisibility(View.VISIBLE);
+
+        rightAnim.setVisibility(View.INVISIBLE);
+
+    }
+
+    public void rightClick(View view) {
+
+        final ImageView rightAnim = (ImageView) findViewById(R.id.walking_anim3);
+
+        rightAnim.setBackgroundResource(R.drawable.walk_anim);
+
+        AnimationDrawable WeWalking = (AnimationDrawable) rightAnim.getBackground();
+
+        WeWalking.stop();
+        WeWalking.start();
+
+        final ImageView leftAnim = (ImageView) findViewById(R.id.walking_anim2);
+        leftAnim.setBackgroundResource(R.drawable.walk_anim);
+
+        AnimationDrawable NoWalking = (AnimationDrawable) leftAnim.getBackground();
+
+        NoWalking.stop();
+        NoWalking.start();
+
+        rightAnim.setVisibility(View.VISIBLE);
+
+        leftAnim.setVisibility(View.INVISIBLE);
+
+    }
+
+
 }
