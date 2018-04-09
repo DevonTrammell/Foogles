@@ -21,17 +21,10 @@ public class foogle_climb extends AppCompatActivity {
         Intent intent = getIntent();
         message = intent.getStringExtra(MainActivity.FOOGLE_NAME);
 
-//        new CountDownTimer(30000, 1000) {
-//
-//            public void onTick(long millisUntilFinished) {
-//               // mTextField.setText("seconds remaining: " + millisUntilFinished / 1000);
-//            }
-//
-//            public void onFinish() {
-//                //mTextField.setText("done!");
-//            }
-//        }.start();
     }
+
+
+
     public void rewardFoogle(View view)
     {
         Intent intent = new Intent(this, Rewards.class);
