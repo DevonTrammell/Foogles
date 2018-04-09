@@ -104,5 +104,6 @@
     <string name="add_string">AddString</string>
     <string name="find_string">FindString</string>
     <string name="delete_string">DeleteString</string>
+    <string name="Start">Start</string>
 
 </resources>

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 public class foogle_climb extends AppCompatActivity {
 
@@ -21,9 +22,12 @@ public class foogle_climb extends AppCompatActivity {
         Intent intent = getIntent();
         message = intent.getStringExtra(MainActivity.FOOGLE_NAME);
 
+        Button leftButton = (Button) findViewById(R.id.button21);
+        Button rightButton = (Button) findViewById(R.id.button22);
+        leftButton.setVisibility(View.INVISIBLE);
+        rightButton.setVisibility(View.INVISIBLE);
+
     }
-
-
 
     public void rewardFoogle(View view)
     {
@@ -33,7 +37,37 @@ public class foogle_climb extends AppCompatActivity {
     }
 
 
+    public void startGame(View view){
 
+
+        Button startButton = (Button) findViewById(R.id.button25);
+        Button leftButton = (Button) findViewById(R.id.button21);
+        Button rightButton = (Button) findViewById(R.id.button22);
+
+        ImageView startImage = (ImageView) findViewById(R.id.imageView10);
+
+        leftButton.setVisibility(View.VISIBLE);
+        rightButton.setVisibility(View.VISIBLE);
+        startButton.setVisibility(View.INVISIBLE);
+
+        startImage.setVisibility(View.INVISIBLE);
+
+        leftClick(null);
+
+        final ProgressBar progressBar = (ProgressBar)findViewById(R.id.progressBar3);
+
+        //30 second countdown by 1 second intervals
+        new CountDownTimer(30000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                progressBar.incrementProgressBy(1); //progressBar's android:max in the XML is set to 30, this increments until max is hit
+            }
+
+            public void onFinish() {
+                rewardFoogle(null);
+            }
+        }.start();
+    }
 
     public void leftClick(View view) {
 
