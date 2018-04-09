@@ -28,6 +28,26 @@ public class foogle_climb extends AppCompatActivity {
         rightButton.setVisibility(View.INVISIBLE);
 
     }
+    //TODO
+    /*
+    * Falling foogle crap animation
+    *
+    * check to see if foogle gets hit
+    *   Have 3 images, High, Medium, and Low positions that change visibility and show the object falling,
+    *   once shitRain goes to low then do the following
+    *
+    *   if leftAnim is visible && shitstormLow = leftside then decrement score (hit animation for future sprint)
+    *
+    *   if rightAnim is visible && shitstormLow = rightside then decrement score (hit animation for future sprint)
+    *
+    * increment/decrement score
+    *
+    * calculate rewards
+    *
+    * store in database
+    * */
+
+
 
     public void rewardFoogle(View view)
     {
