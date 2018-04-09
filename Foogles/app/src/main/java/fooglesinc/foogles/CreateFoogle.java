@@ -25,8 +25,7 @@ public class CreateFoogle extends AppCompatActivity {
 
         idView = (TextView) findViewById(R.id.FoogleID);
         productBox = (EditText) findViewById(R.id.EditName);
-        quantityBox =
-                (EditText) findViewById(R.id.FoogleEnergy);
+        quantityBox = (EditText) findViewById(R.id.FoogleEnergy);
 
     }
 

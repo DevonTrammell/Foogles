@@ -32,7 +32,7 @@ public class MyDBHandler extends SQLiteOpenHelper{
         String CREATE_PRODUCTS_TABLE = "CREATE TABLE " +
                 TABLE_FOOGLES + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY," + COLUMN_FOOGLENAME
-                + " TEXT," + COLUMN_ENERGY + " INTEGER" + ")";
+                + " TEXT," + COLUMN_ENERGY + "INTEGER)";
         db.execSQL(CREATE_PRODUCTS_TABLE);
 
     }
