@@ -1,18 +1,26 @@
 package fooglesinc.foogles;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.CountDownTimer;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
+
+import java.util.Random;
 
 public class foogle_climb extends AppCompatActivity {
 
     public static String message;
+
+    public int score = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,16 +32,146 @@ public class foogle_climb extends AppCompatActivity {
 
         Button leftButton = (Button) findViewById(R.id.button21);
         Button rightButton = (Button) findViewById(R.id.button22);
+
         leftButton.setVisibility(View.INVISIBLE);
         rightButton.setVisibility(View.INVISIBLE);
 
+        ImageView leftRock = (findViewById(R.id.imageView11));
+        ImageView rightRock = (findViewById(R.id.imageView12));
+
+        leftRock.setVisibility(View.INVISIBLE);
+        rightRock.setVisibility(View.INVISIBLE);
+
+        TextView scoreDisplay = findViewById(R.id.textView5);
+        scoreDisplay.setText(Integer.toString(score));
+
+
+
     }
+    //TODO
+    /*
+    * Pass to rewards screen
+    * store in database
+    * */
+
 
     public void rewardFoogle(View view)
     {
         Intent intent = new Intent(this, Rewards.class);
         intent.putExtra(MainActivity.FOOGLE_NAME, message);
         startActivity(intent);
+    }
+
+
+   public void fallLeft(View view)
+   {
+       ImageView leftRock = (findViewById(R.id.imageView11));
+
+       leftRock.setVisibility(View.VISIBLE);
+
+       ObjectAnimator fallingLeft = ObjectAnimator.ofFloat(leftRock, "translationY", 0f, 900f);
+
+       fallingLeft.setDuration(3000);
+
+       // the linear interpolator was an attempt at repeating the animation
+       // feel free to try and make that approach work.
+
+       //    fallingLeft.setInterpolator(new LinearInterpolator());
+       //    fallingLeft.setRepeatMode(ObjectAnimator.RESTART);
+
+       fallingLeft.start();
+
+
+
+   }
+
+
+   public void fallRight(View view)
+   {
+       ImageView rightRock = (findViewById(R.id.imageView12));
+
+       rightRock.setVisibility(View.VISIBLE);
+
+       ObjectAnimator fallingRight = ObjectAnimator.ofFloat(rightRock, "translationY", 0f, 900f);
+
+       fallingRight.setDuration(3000);
+
+       fallingRight.start();
+   }
+
+
+    public void rockStorm(View view)
+    {
+
+        final ImageView leftAnim = (ImageView) findViewById(R.id.walking_anim2);
+
+        final ImageView rightAnim = (ImageView) findViewById(R.id.walking_anim3);
+
+
+        //generate a random number to determine which side will fall
+        Random sideChoice = new Random();
+
+        int left = 1, right = 2;
+        int dangerSide = 0;
+
+        dangerSide = sideChoice.nextInt((right - left) + 1) + left;
+
+        if(dangerSide == left)
+        {
+            fallLeft(null);
+
+            //these timers call the rock storm recursively and allow the
+            //looping effect of each rock
+
+            // we can fake object collision by taking the 4 second fall animation into account
+            // and saying that if the player is on the corresponding side of the fall
+            // when the object animation is almost out of time, it got hit
+
+            new CountDownTimer(2000, 1000)
+            {
+                public void onTick(long millisUntilFinished)
+                {
+                    final TextView scoreDisplay = findViewById(R.id.textView5);
+
+                    if(millisUntilFinished <= 1000
+                            && leftAnim.getVisibility() == View.VISIBLE
+                            && rightAnim.getVisibility() == View.INVISIBLE )
+                    {
+                        score -= 5;
+                        scoreDisplay.setText(Integer.toString(score));
+                    }
+                }
+
+                public void onFinish(){rockStorm(null);}
+            }.start();
+
+        }
+        else if (dangerSide == right)
+        {
+            fallRight(null);
+
+            new CountDownTimer(2000, 1000)
+            {
+                public void onTick(long millisUntilFinished)
+                {
+                    final TextView scoreDisplay = findViewById(R.id.textView5);
+
+                    if(millisUntilFinished <= 1000
+                            && leftAnim.getVisibility()  == View.INVISIBLE
+                            && rightAnim.getVisibility() == View.VISIBLE )
+                    {
+                        score -= 5;
+                        scoreDisplay.setText(Integer.toString(score));
+
+                    }
+                }
+
+                public void onFinish(){rockStorm(null);}
+            }.start();
+
+        }
+
+
     }
 
 
@@ -46,28 +184,45 @@ public class foogle_climb extends AppCompatActivity {
 
         ImageView startImage = (ImageView) findViewById(R.id.imageView10);
 
+        //set left and right buttons visible while rendering the start image and button invisible
         leftButton.setVisibility(View.VISIBLE);
+
         rightButton.setVisibility(View.VISIBLE);
+
         startButton.setVisibility(View.INVISIBLE);
 
         startImage.setVisibility(View.INVISIBLE);
 
-        leftClick(null);
+        leftClick(null); // initially begin on the left side of the screen
+
+
+        // call the progress bar and set up the main timer for the game
+
 
         final ProgressBar progressBar = (ProgressBar)findViewById(R.id.progressBar3);
 
         //30 second countdown by 1 second intervals
-        new CountDownTimer(30000, 1000) {
+        new CountDownTimer(30000, 1000)
+        {
+            final TextView scoreDisplay = findViewById(R.id.textView5);
 
-            public void onTick(long millisUntilFinished) {
+            public void onTick(long millisUntilFinished)
+            {
                 progressBar.incrementProgressBy(1); //progressBar's android:max in the XML is set to 30, this increments until max is hit
+                score++;
+                scoreDisplay.setText(Integer.toString(score));
+
             }
 
             public void onFinish() {
                 rewardFoogle(null);
+                score = 0;
             }
         }.start();
+
+            rockStorm(null);
     }
+
 
     public void leftClick(View view) {
 
@@ -95,6 +250,7 @@ public class foogle_climb extends AppCompatActivity {
         rightAnim.setVisibility(View.INVISIBLE);
 
     }
+
 
     public void rightClick(View view) {
 
