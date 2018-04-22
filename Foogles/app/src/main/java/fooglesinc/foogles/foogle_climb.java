@@ -59,6 +59,10 @@ public class foogle_climb extends AppCompatActivity {
     {
         Intent intent = new Intent(this, Rewards.class);
         intent.putExtra(MainActivity.FOOGLE_NAME, message);
+
+        //pass score to next activity
+        //to be saved in foogle stats
+
         startActivity(intent);
     }
 
