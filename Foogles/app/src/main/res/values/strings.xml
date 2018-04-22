@@ -106,5 +106,7 @@
     <string name="delete_string">DeleteString</string>
     <string name="Start">Start</string>
     <string name="Score">Score:</string>
+    <string name="description">Description</string>
+    <string name="GoToRewards">Go To Rewards</string>
 
 </resources>
