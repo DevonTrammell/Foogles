@@ -6,11 +6,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CursorAdapter;
+import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.content.Context;
+import android.content.ContentValues;
+import android.database.Cursor;
 
 import java.util.ArrayList;
 
@@ -19,8 +27,9 @@ import static android.app.PendingIntent.getActivity;
 public class ChooseFoogle extends AppCompatActivity {
 
     public static Spinner selectFoogle;
-    ArrayAdapter<CharSequence> adapter;
+    public static ArrayAdapter<String> adapter;
     public static String message;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +40,10 @@ public class ChooseFoogle extends AppCompatActivity {
         Intent intent = getIntent();
         message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
-        //SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-        //ArrayList<String> names = sharedPref.getString();
+
+        MyDBHandler dbHandler = new MyDBHandler(this, null, null, 1);
+        ArrayList<String> list = dbHandler.getAllElements();
+
 
 
         TextView textView = findViewById(R.id.textView);
@@ -40,7 +51,7 @@ public class ChooseFoogle extends AppCompatActivity {
         textView.setText(displayedMessage);
 
         selectFoogle = (Spinner)findViewById(R.id.spinner);
-        adapter = ArrayAdapter.createFromResource(this,R.array.Foogle_Names,android.R.layout.simple_spinner_item);
+        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,list);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         selectFoogle.setAdapter(adapter);
         selectFoogle.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

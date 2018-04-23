@@ -9,6 +9,8 @@ import android.content.Context;
 import android.content.ContentValues;
 import android.database.Cursor;
 
+import java.util.ArrayList;
+
 public class MyDBHandler extends SQLiteOpenHelper{
 
     private static final int DATABASE_VERSION = 1;
@@ -17,7 +19,9 @@ public class MyDBHandler extends SQLiteOpenHelper{
 
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_FOOGLENAME = "fooglename";
-    public static final String COLUMN_ENERGY = "energy";
+    public static final String COLUMN_LEVEL = "level";
+
+
 
 
 
@@ -32,7 +36,7 @@ public class MyDBHandler extends SQLiteOpenHelper{
         String CREATE_PRODUCTS_TABLE = "CREATE TABLE " +
                 TABLE_FOOGLES + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY," + COLUMN_FOOGLENAME
-                + " TEXT," + COLUMN_ENERGY + "INTEGER)";
+                + " TEXT," + COLUMN_LEVEL + " INTEGER" + ")";
         db.execSQL(CREATE_PRODUCTS_TABLE);
 
     }
@@ -48,7 +52,8 @@ public class MyDBHandler extends SQLiteOpenHelper{
 
         ContentValues values = new ContentValues();
         values.put(COLUMN_FOOGLENAME, foogle.getFoogleName());
-        values.put(COLUMN_ENERGY, foogle.getEnergy());
+        values.put(COLUMN_LEVEL, foogle.getLevel());
+
 
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -69,7 +74,7 @@ public class MyDBHandler extends SQLiteOpenHelper{
             cursor.moveToFirst();
             foogle.set_id(Integer.parseInt(cursor.getString(0)));
             foogle.setFoogleName(cursor.getString(1));
-            foogle.setEnergy(Integer.parseInt(cursor.getString(2)));
+            foogle.setLevel(Integer.parseInt(cursor.getString(2)));
             cursor.close();
         } else {
             foogle = null;
@@ -100,4 +105,53 @@ public class MyDBHandler extends SQLiteOpenHelper{
         db.close();
         return result;
     }
+
+    public ArrayList<String> getAllElements() {
+
+
+
+        ArrayList<Foogle> list = new ArrayList<Foogle>();
+
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + TABLE_FOOGLES;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        try {
+
+            Cursor cursor = db.rawQuery(selectQuery, null);
+            try {
+
+                // looping through all rows and adding to list
+                if (cursor.moveToFirst()) {
+                    do {
+                        Foogle obj = new Foogle();
+                        //only one column
+                        obj.set_id(cursor.getInt(0));
+                        obj.setFoogleName(cursor.getString(1));
+                        obj.setLevel(cursor.getInt(2));
+                        list.add(obj);
+                    } while (cursor.moveToNext());
+                }
+
+            } finally {
+                try { cursor.close(); } catch (Exception ignore) {}
+            }
+
+        } finally {
+            try { db.close(); } catch (Exception ignore) {}
+        }
+
+        ArrayList<String> FoogleString = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++)
+        {
+            FoogleString.add(list.get(i).getFoogleName());
+        }
+        return FoogleString;
+    }
+
+
+
+
+
+
 }

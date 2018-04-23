@@ -8,24 +8,27 @@ public class Foogle {
 
     private int _id;
     private String foogleName;
-    private int energy;
+    private int level;
+
 
     public Foogle() {
 
     }
 
-    public Foogle(int id, String foogleName, int energy)
+    public Foogle(int id, String foogleName, int level)
     {
         this._id = id;
         this.foogleName = foogleName;
-        this.energy = energy;
+        this.level = level;
+
 
     }
 
-    public Foogle( String foogleName, int energy)
+    public Foogle( String foogleName, int level)
     {
         this.foogleName = foogleName;
-        this.energy = energy;
+        this.level = level;
+
     }
 
     public int get_id() {
@@ -44,11 +47,13 @@ public class Foogle {
         this.foogleName = foogleName;
     }
 
-    public int getEnergy() {
-        return energy;
+    public int getLevel() {
+        return level;
     }
 
-    public void setEnergy(int energy) {
-        this.energy = energy;
+    public void setLevel(int level) {
+        this.level = level;
     }
+
+
 }

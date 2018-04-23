@@ -4,20 +4,18 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Edit extends AppCompatActivity {
 
-    public static Spinner editFoogleColor;
-    public static Spinner editFoogleCostume;
-    public static Spinner editFoogleMisc;
-    ArrayAdapter<CharSequence> adapter;
+    TextView idView;
+    TextView productBox;
+    TextView quantityBox;
 
 
     public static final String EXTRA_MESSAGE = "com.example.foogles.MESSAGE";
@@ -25,65 +23,11 @@ public class Edit extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
 
-
-        View decorView = getWindow().getDecorView();
-//        decorView.setSystemUiVisibility(
-//                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-//                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-//                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-//                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-//                        | View.SYSTEM_UI_FLAG_FULLSCREEN
-//                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-
-        // Spinner element
-      editFoogleColor = (Spinner) findViewById(R.id.spinner_Color);
-        adapter = ArrayAdapter.createFromResource(this,R.array.Colors,android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        editFoogleColor.setAdapter(adapter);
-        editFoogleColor.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                //Toast.makeText(getBaseContext(),adapterView.getItemAtPosition(position)+" selected",Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        editFoogleCostume = (Spinner) findViewById(R.id.spinner_costume);
-        adapter = ArrayAdapter.createFromResource(this,R.array.Costumes,android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        editFoogleCostume.setAdapter(adapter);
-        editFoogleCostume.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                //Toast.makeText(getBaseContext(),adapterView.getItemAtPosition(position)+" selected",Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        editFoogleMisc = (Spinner) findViewById(R.id.spinner_misc);
-        adapter = ArrayAdapter.createFromResource(this,R.array.Misc,android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        editFoogleMisc.setAdapter(adapter);
-        editFoogleMisc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                //Toast.makeText(getBaseContext(),adapterView.getItemAtPosition(position)+" selected",Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
+        idView = (TextView) findViewById(R.id.ID);
+        productBox = (EditText) findViewById(R.id.Name);
+        quantityBox = (EditText) findViewById(R.id.Energy);
     }
+
 
     public void saveFoogle(View view) {
         Intent intent = new Intent(this, MainActivity.class);
@@ -91,5 +35,47 @@ public class Edit extends AppCompatActivity {
         //intent.putExtra(EXTRA_MESSAGE, mode);
         startActivity(intent);
     }
+
+    public void lookupProduct (View view) {
+        MyDBHandler dbHandler = new MyDBHandler(this, null, null, 1);
+
+        Foogle foogle =
+                dbHandler.findFoogle(productBox.getText().toString());
+
+        if (foogle != null) {
+            idView.setText(String.valueOf(foogle.get_id()));
+
+            quantityBox.setText(String.valueOf(foogle.getLevel()));
+        } else {
+            idView.setText("No Match Found");
+        }
+    }
+
+    public void updateProduct(View view)
+    {
+        MyDBHandler dbHandler = new MyDBHandler(this, null, null, 1);
+
+        //dbHandler.updateFoogle(productBox.getText().toString(),quantityBox.getText().toString());
+    }
+
+    public void removeProduct (View view) {
+        MyDBHandler dbHandler = new MyDBHandler(this, null,
+                null, 1);
+
+        boolean result = dbHandler.deleteFoogle(
+                productBox.getText().toString());
+
+        if (result)
+        {
+            idView.setText("Record Deleted");
+            productBox.setText("");
+            quantityBox.setText("");
+        }
+        else
+            idView.setText("No Match Found");
+    }
+
+
+
 }
 

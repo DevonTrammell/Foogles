@@ -14,7 +14,7 @@ import android.view.MenuItem;
 
 public class CreateFoogle extends AppCompatActivity {
 
-    TextView idView;
+
     TextView productBox;
     TextView quantityBox;
 
@@ -23,56 +23,26 @@ public class CreateFoogle extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_foogle);
 
-        idView = (TextView) findViewById(R.id.FoogleID);
+
         productBox = (EditText) findViewById(R.id.EditName);
-        quantityBox = (EditText) findViewById(R.id.FoogleEnergy);
+
 
     }
 
     public void newProduct (View view) {
         MyDBHandler dbHandler = new MyDBHandler(this, null, null, 1);
 
-        int quantity =
-                Integer.parseInt(quantityBox.getText().toString());
-
+        int level = 1;
         Foogle foogle =
-                new Foogle(productBox.getText().toString(), quantity);
+                new Foogle(productBox.getText().toString(), level);
 
         dbHandler.addFoogle(foogle);
         productBox.setText("");
         quantityBox.setText("");
     }
 
-    public void lookupProduct (View view) {
-        MyDBHandler dbHandler = new MyDBHandler(this, null, null, 1);
 
-        Foogle foogle =
-                dbHandler.findFoogle(productBox.getText().toString());
 
-        if (foogle != null) {
-            idView.setText(String.valueOf(foogle.get_id()));
-
-            quantityBox.setText(String.valueOf(foogle.getEnergy()));
-        } else {
-            idView.setText("No Match Found");
-        }
-    }
-    public void removeProduct (View view) {
-        MyDBHandler dbHandler = new MyDBHandler(this, null,
-                null, 1);
-
-        boolean result = dbHandler.deleteFoogle(
-                productBox.getText().toString());
-
-        if (result)
-        {
-            idView.setText("Record Deleted");
-            productBox.setText("");
-            quantityBox.setText("");
-        }
-        else
-            idView.setText("No Match Found");
-    }
 
     public void backToMain(View view)
     {

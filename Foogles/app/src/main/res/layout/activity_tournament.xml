@@ -7,7 +7,7 @@
     tools:context="fooglesinc.foogles.Tournament">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Save"
         android:layout_width="257dp"
         android:layout_height="50dp"
         android:layout_marginBottom="24dp"
@@ -31,10 +31,10 @@
         android:layout_marginTop="24dp"
         android:text="@string/Big_League"
         app:layout_constraintBottom_toTopOf="@+id/button5"
-        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/Save"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/Save"
+        app:layout_constraintTop_toBottomOf="@+id/Save"
         android:layout_marginRight="8dp" />
 
     <Button
@@ -60,7 +60,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/Save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
