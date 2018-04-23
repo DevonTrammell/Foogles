@@ -4,7 +4,6 @@ import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.CountDownTimer;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,13 +12,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import java.util.Random;
 
 public class foogle_climb extends AppCompatActivity {
 
     public static String message;
-
     public int score = 0;
 
     @Override
@@ -44,16 +41,12 @@ public class foogle_climb extends AppCompatActivity {
 
         TextView scoreDisplay = findViewById(R.id.textView5);
         scoreDisplay.setText(Integer.toString(score));
-
-
-
     }
     //TODO
     /*
     * Pass to rewards screen
     * store in database
     * */
-
 
     public void rewardFoogle(View view)
     {
@@ -65,7 +58,6 @@ public class foogle_climb extends AppCompatActivity {
 
         startActivity(intent);
     }
-
 
    public void fallLeft(View view)
    {
@@ -84,11 +76,7 @@ public class foogle_climb extends AppCompatActivity {
        //    fallingLeft.setRepeatMode(ObjectAnimator.RESTART);
 
        fallingLeft.start();
-
-
-
    }
-
 
    public void fallRight(View view)
    {
@@ -103,14 +91,12 @@ public class foogle_climb extends AppCompatActivity {
        fallingRight.start();
    }
 
-
     public void rockStorm(View view)
     {
 
         final ImageView leftAnim = (ImageView) findViewById(R.id.walking_anim2);
 
         final ImageView rightAnim = (ImageView) findViewById(R.id.walking_anim3);
-
 
         //generate a random number to determine which side will fall
         Random sideChoice = new Random();
@@ -148,7 +134,6 @@ public class foogle_climb extends AppCompatActivity {
 
                 public void onFinish(){rockStorm(null);}
             }.start();
-
         }
         else if (dangerSide == right)
         {
@@ -166,18 +151,13 @@ public class foogle_climb extends AppCompatActivity {
                     {
                         score -= 5;
                         scoreDisplay.setText(Integer.toString(score));
-
                     }
                 }
 
                 public void onFinish(){rockStorm(null);}
             }.start();
-
         }
-
-
     }
-
 
     public void startGame(View view){
 
@@ -190,19 +170,13 @@ public class foogle_climb extends AppCompatActivity {
 
         //set left and right buttons visible while rendering the start image and button invisible
         leftButton.setVisibility(View.VISIBLE);
-
         rightButton.setVisibility(View.VISIBLE);
-
         startButton.setVisibility(View.INVISIBLE);
-
         startImage.setVisibility(View.INVISIBLE);
 
         leftClick(null); // initially begin on the left side of the screen
 
-
         // call the progress bar and set up the main timer for the game
-
-
         final ProgressBar progressBar = (ProgressBar)findViewById(R.id.progressBar3);
 
         //30 second countdown by 1 second intervals
@@ -215,7 +189,6 @@ public class foogle_climb extends AppCompatActivity {
                 progressBar.incrementProgressBy(1); //progressBar's android:max in the XML is set to 30, this increments until max is hit
                 score++;
                 scoreDisplay.setText(Integer.toString(score));
-
             }
 
             public void onFinish() {
@@ -226,7 +199,6 @@ public class foogle_climb extends AppCompatActivity {
 
             rockStorm(null);
     }
-
 
     public void leftClick(View view) {
 
@@ -239,7 +211,6 @@ public class foogle_climb extends AppCompatActivity {
         WeWalking.stop();
         WeWalking.start();
 
-
         final ImageView rightAnim = (ImageView) findViewById(R.id.walking_anim3);
 
         rightAnim.setBackgroundResource(R.drawable.walk_anim);
@@ -250,11 +221,8 @@ public class foogle_climb extends AppCompatActivity {
         NoWalking.start();
 
         leftAnim.setVisibility(View.VISIBLE);
-
         rightAnim.setVisibility(View.INVISIBLE);
-
     }
-
 
     public void rightClick(View view) {
 
@@ -276,10 +244,6 @@ public class foogle_climb extends AppCompatActivity {
         NoWalking.start();
 
         rightAnim.setVisibility(View.VISIBLE);
-
         leftAnim.setVisibility(View.INVISIBLE);
-
     }
-
-
 }

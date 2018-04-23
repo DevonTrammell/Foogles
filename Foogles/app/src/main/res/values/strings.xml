@@ -108,5 +108,7 @@
     <string name="Score">Score:</string>
     <string name="description">Description</string>
     <string name="GoToRewards">Go To Rewards</string>
+    <string name="Up">Up</string>
+    <string name="Down">Down</string>
 
 </resources>
