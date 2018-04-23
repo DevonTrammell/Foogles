@@ -17,28 +17,38 @@ public class Rewards extends AppCompatActivity {
 
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.FOOGLE_NAME);
-
-        TextView textView = findViewById(R.id.textView3);
-        String displayedMessage = message+"'s stat(s) have changed!";
-        textView.setText(displayedMessage);
-
-        TextView randomStats = findViewById(R.id.textView4);
-        Random rand = new Random();
-        String changes = "";
-        String[] stats = new String[] {"Climb","Swim","Running","Energy"};
-        for (int index = 0; index < 4; index++)
+        if (message.equals("win"))
         {
-            int stat_change = rand.nextInt(5) - 2;
-            if (stat_change >=0)
-            {
-                changes = changes + stats[index]+": [+"+stat_change+"]!\n";
-            }
-            else
-            {
-                changes = changes + stats[index]+": ["+stat_change+"]!\n";
-            }
+            TextView textView = findViewById(R.id.textView3);
+            String displayedMessage = message + " - hurts being this good!";
+            textView.setText(displayedMessage);
         }
-        randomStats.setText(changes);
+        else if (message.equals("loss"))
+        {
+            TextView textView = findViewById(R.id.textView3);
+            String displayedMessage = message + " Whoops maybe you should try professional Foogle Fishing!";
+            textView.setText(displayedMessage);
+        }
+        else
+        {
+            TextView textView = findViewById(R.id.textView3);
+            String displayedMessage = message + "'s stat(s) have changed!";
+            textView.setText(displayedMessage);
+
+            TextView randomStats = findViewById(R.id.textView4);
+            Random rand = new Random();
+            String changes = "";
+            String[] stats = new String[]{"Climb", "Swim", "Running", "Energy"};
+            for (int index = 0; index < 4; index++) {
+                int stat_change = rand.nextInt(5) - 2;
+                if (stat_change >= 0) {
+                    changes = changes + stats[index] + ": [+" + stat_change + "]!\n";
+                } else {
+                    changes = changes + stats[index] + ": [" + stat_change + "]!\n";
+                }
+            }
+            randomStats.setText(changes);
+        }
     }
     public void backToMain(View view)
     {

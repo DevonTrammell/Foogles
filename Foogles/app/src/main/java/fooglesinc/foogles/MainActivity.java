@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String WHERE_STATUS = "com.example.foogles.WHERE";
     public static final String WHEN_STATUS = "com.example.foogles.WHEN";
     public static final String PET_STATUS = "com.example.foogles.PET";
+    public static final String DIFFICULTY = "com.example.foogles.DIFF";
     private ImageSwitcher simpleImageSwitcher;
     Button btnNext;
     EditText FoogleRanchName;

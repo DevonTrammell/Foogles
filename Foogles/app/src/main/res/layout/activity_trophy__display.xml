@@ -54,6 +54,7 @@
         app:layout_constraintVertical_bias="0.1" />
 
     <ImageView
+        android:rotationY="180"
         android:id="@+id/walking_anim"
         android:layout_width="128dp"
         android:layout_height="128dp"

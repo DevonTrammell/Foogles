@@ -22,7 +22,7 @@ public class Trophy_Display extends AppCompatActivity {
 
         // setting up a basic animation
         walking = (ImageView) findViewById(R.id.walking_anim);
-        walking.setBackgroundResource(R.drawable.walk_anim);
+        walking.setBackgroundResource(R.drawable.blue_walk);
         AnimationDrawable WeWalking = (AnimationDrawable) walking.getBackground();
 
         WeWalking.stop();

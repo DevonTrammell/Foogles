@@ -58,6 +58,7 @@
         <activity android:name=".foogle_hop"></activity>
         <activity android:name=".whack_a_foogle"></activity>
         <activity android:name=".foogle_fish"></activity>
+        <activity android:name=".Racing"></activity>
         <activity android:name=".Trophy_Display">
             android:parentActivityName=".MainActivity">
             <!-- The meta-data tag is required if you support API level 15 or lower -->
