@@ -6,6 +6,21 @@
     android:layout_height="match_parent"
     tools:context="fooglesinc.foogles.Tournament">
 
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fullmain" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="257dp"
@@ -53,17 +68,18 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="379dp"
-        android:layout_height="198dp"
+        android:layout_width="344dp"
+        android:layout_height="251dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.625"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_trophy_foreground" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/trophybutton" />
 
 
 </android.support.constraint.ConstraintLayout>

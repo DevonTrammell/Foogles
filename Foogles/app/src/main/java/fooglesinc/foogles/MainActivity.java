@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void editFoogle(View view) {
-        Intent intent = new Intent(this, ChooseFoogle.class);
+        Intent intent = new Intent(this, Edit.class);
         String mode = "Edit is not a game";
         intent.putExtra(EXTRA_MESSAGE, mode);
         startActivity(intent);
