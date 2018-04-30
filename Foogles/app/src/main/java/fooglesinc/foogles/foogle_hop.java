@@ -57,14 +57,14 @@ public class foogle_hop extends AppCompatActivity {
     {
 
         ImageView foogle = (ImageView) findViewById(R.id.imageView10);
-        float height = 400;
+        float height = 600;
         float propertyStart = 0f;
 
         float propertyEnd = -(height - (float)foogle.getHeight()/2);
         String propertyName = "translationY";
         ObjectAnimator jump = ObjectAnimator.ofFloat(foogle,propertyName, propertyStart, propertyEnd);
 
-        jump.setDuration(1000);
+        jump.setDuration(750);
         jump.setRepeatCount(1);
         jump.setRepeatMode(ObjectAnimator.REVERSE);
         jump.setInterpolator(timeInterpolator);
@@ -88,6 +88,8 @@ public class foogle_hop extends AppCompatActivity {
         });
 
 
+//      EXAMPLE CODE FROM         http://android-er.blogspot.com/2015/10/interpolator-effect-on-objectanimator.html
+//
 //        Button btnAccelerateInterpolator = (Button)findViewById(R.id.bAccelerateInterpolator);
 //
 //        btnAccelerateInterpolator.setOnClickListener(new View.OnClickListener() {
@@ -100,10 +102,6 @@ public class foogle_hop extends AppCompatActivity {
 
 
 
-
-
-
-
     }
 
 
@@ -111,6 +109,8 @@ public class foogle_hop extends AppCompatActivity {
 
 
         Button startButton = (Button) findViewById(R.id.button25);
+
+        startButton.setVisibility(View.INVISIBLE);
 
         ImageView startImage = (ImageView) findViewById(R.id.imageView10);
 
@@ -135,6 +135,7 @@ public class foogle_hop extends AppCompatActivity {
             }
         }.start();
 
+        jumping(null);
     //    rockStorm(null);
     }
 
