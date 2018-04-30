@@ -1,5 +1,6 @@
 package fooglesinc.foogles;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -54,8 +55,7 @@ public class Edit extends AppCompatActivity {
     public void updateProduct(View view)
     {
         MyDBHandler dbHandler = new MyDBHandler(this, null, null, 1);
-
-        //dbHandler.updateFoogle(productBox.getText().toString(),quantityBox.getText().toString());
+        dbHandler.updateFoogle(productBox.getText());
     }
 
     public void removeProduct (View view) {
@@ -74,6 +74,7 @@ public class Edit extends AppCompatActivity {
         else
             idView.setText("No Match Found");
     }
+
 
 
 

@@ -6,174 +6,100 @@
     android:layout_height="match_parent"
     tools:context="fooglesinc.foogles.MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="358dp"
+        android:layout_height="195dp"
+        android:layout_marginBottom="13dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginStart="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/ic_foogle_sticks" />
+
     <EditText
         android:id="@+id/EditName"
         android:layout_width="290dp"
         android:layout_height="49dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="1dp"
+        android:cursorVisible="false"
         android:ems="10"
         android:inputType="textPersonName"
-        android:cursorVisible="false"
         android:singleLine="true"
         android:text="@string/Farm_Name"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/Farm_Name"
-        android:layout_marginLeft="16dp" />
-
-    <Button
-        android:id="@+id/Save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="8dp"
-        android:text="@string/Edit_Farm_Name"
-        app:layout_constraintBaseline_toBaselineOf="@+id/EditName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/EditName"
-        tools:text="@string/Edit_Farm_Name"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="8dp" />
-
-    <ImageSwitcher
-        android:id="@+id/simpleImageSwitcher"
-        android:layout_width="384dp"
-        android:layout_height="301dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="56dp"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:text="@string/Farm_Name" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="24dp"
         android:onClick="selectGame"
         android:text="@string/Training_Button"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/button6"
+        app:layout_constraintEnd_toStartOf="@+id/button5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/simpleImageSwitcher"
-        tools:text="@string/Training_Button"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="16dp" />
+        tools:text="@string/Training_Button" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginBottom="17dp"
         android:onClick="walkAFoogle"
         android:text="@string/Walk_Game"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="@+id/button2"
-        tools:text="@string/Walk_Game"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="8dp" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:onClick="marketplace"
-        android:text="@string/Marketplace_Button"
-        app:layout_constraintEnd_toStartOf="@+id/button5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        tools:text="@string/Marketplace_Button"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="16dp" />
+        tools:text="@string/Walk_Game" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:onClick="editFoogle"
+        android:layout_marginBottom="20dp"
+        android:onClick="manageFoogle"
         android:text="@string/Edit_Foogle_Button"
-        app:layout_constraintBottom_toBottomOf="@+id/button4"
+        app:layout_constraintBottom_toTopOf="@+id/button6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.0"
-        tools:text="@string/Edit_Foogle_Button"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="8dp" />
+        tools:text="@string/Edit_Foogle_Button" />
 
     <Button
         android:id="@+id/button6"
         android:layout_width="376dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
         android:onClick="fooglympics"
         android:text="@string/Tournament_Button"
-        app:layout_constraintEnd_toEndOf="@+id/button5"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
+        app:layout_constraintBottom_toTopOf="@+id/button23"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:text="@string/Tournament_Button" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="16dp"
-        android:onClick="createFoogle"
-        android:text="@string/Add_Foogle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="16dp"
-        android:text="@string/View_Switch"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginEnd="16dp" />
 
     <Button
         android:id="@+id/button23"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="145dp"
+        android:layout_marginStart="145dp"
         android:onClick="trophyCase"
         android:text="@string/Trophies_Button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button8"
-        app:layout_constraintStart_toEndOf="@+id/button7"
-        app:layout_constraintTop_toBottomOf="@+id/button6"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

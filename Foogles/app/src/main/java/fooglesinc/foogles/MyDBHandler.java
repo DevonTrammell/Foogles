@@ -149,6 +149,15 @@ public class MyDBHandler extends SQLiteOpenHelper{
         return FoogleString;
     }
 
+    public void updateFoogle(CharSequence name)
+    {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_FOOGLENAME, (String) name);
+        db.update(TABLE_FOOGLES,cv,"_id"+1,null);
+
+    }
+
 
 
 

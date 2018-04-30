@@ -22,5 +22,4 @@
     <item
         android:drawable="@drawable/walk_invisible7"
         android:duration="100"/>
-
 </animation-list>

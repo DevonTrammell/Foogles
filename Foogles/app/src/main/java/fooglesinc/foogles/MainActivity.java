@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String WHERE_STATUS = "com.example.foogles.WHERE";
     public static final String WHEN_STATUS = "com.example.foogles.WHEN";
     public static final String PET_STATUS = "com.example.foogles.PET";
+    public static final String DIFFICULTY = "com.example.foogles.DIFF";
     private ImageSwitcher simpleImageSwitcher;
     Button btnNext;
     EditText FoogleRanchName;
@@ -43,38 +44,38 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //MediaPlayer ring = create(MainActivity.this, R.raw.mariothemesong);
-        //ring.start();
-        //ring.setLooping(true);
+        MediaPlayer ring = create(MainActivity.this, R.raw.mariothemesong);
+        ring.start();
+        ring.setLooping(true);
 
 
-        btnNext = (Button) findViewById(R.id.button8);
-        simpleImageSwitcher = (ImageSwitcher) findViewById(R.id.simpleImageSwitcher);
-        simpleImageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
-            @Override
-            public View makeView() {
-                ImageView imageView = new ImageView(getApplicationContext());
-                imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT));
-                return imageView;
-            }
-        });
-        if (count >= 0)
-            simpleImageSwitcher.setImageResource(imageIds[0]);
-        Animation in = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
-        Animation out = AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right);
-
-        simpleImageSwitcher.setInAnimation(in);
-        simpleImageSwitcher.setOutAnimation(out);
-
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                currentIndex++;
-                if (currentIndex >= count)
-                    currentIndex = 0;
-                simpleImageSwitcher.setImageResource(imageIds[currentIndex]);
-            }
-        });
+//        btnNext = (Button) findViewById(R.id.button8);
+//        simpleImageSwitcher = (ImageSwitcher) findViewById(R.id.simpleImageSwitcher);
+//        simpleImageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
+//            @Override
+//            public View makeView() {
+//                ImageView imageView = new ImageView(getApplicationContext());
+//                imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+//                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT));
+//                return imageView;
+//            }
+//        });
+//        if (count >= 0)
+//            simpleImageSwitcher.setImageResource(imageIds[0]);
+//        Animation in = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
+//        Animation out = AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right);
+//
+//        simpleImageSwitcher.setInAnimation(in);
+//        simpleImageSwitcher.setOutAnimation(out);
+//
+//        btnNext.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                currentIndex++;
+//                if (currentIndex >= count)
+//                    currentIndex = 0;
+//                simpleImageSwitcher.setImageResource(imageIds[currentIndex]);
+//            }
+//        });
 
         FoogleRanchName = (EditText) findViewById(R.id.EditName);
         FoogleRanchName.requestFocusFromTouch();
@@ -111,12 +112,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void editFoogle(View view) {
-        Intent intent = new Intent(this, ChooseFoogle.class);
-        String mode = "Edit is not a game";
-        intent.putExtra(EXTRA_MESSAGE, mode);
-        startActivity(intent);
-    }
+//    public void editFoogle(View view) {
+//        Intent intent = new Intent(this, Edit.class);
+//        String mode = "Edit is not a game";
+//        intent.putExtra(EXTRA_MESSAGE, mode);
+//        startActivity(intent);
+//    }
 
     public void fooglympics(View view) {
         Intent intent = new Intent(this, Tournament.class);
@@ -128,10 +129,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void createFoogle(View view) {
-        Intent intent = new Intent(this, CreateFoogle.class);
+    public void manageFoogle(View view)
+    {
+        Intent intent = new Intent(this,ManageFoogle.class);
         startActivity(intent);
     }
+
+//    public void createFoogle(View view) {
+//        Intent intent = new Intent(this, CreateFoogle.class);
+//        startActivity(intent);
+//    }
 
 
 

@@ -5,7 +5,7 @@
     <string name="Training_Button">Train</string>
     <string name="Walk_Game">Walk-a-Foogle</string>
     <string name="Marketplace_Button">Marketplace</string>
-    <string name="Edit_Foogle_Button">Edit Foogle</string>
+    <string name="Edit_Foogle_Button">Manage Foogles</string>
     <string name="Tournament_Button">Fooglympics</string>
     <string name="Confirm_Button">Confirm</string>
     <string name="Foogle_Fhrase_1">Foogtacular!</string>
@@ -30,12 +30,6 @@
     <string name="Save">Save</string>
     <string name="Go_Walk">Let\'s Go!</string>
 
-    <string-array name="Foogle_Names">
-        <item>FoogMan</item>
-        <item>Chuck</item>
-        <item>RadishThing</item>
-        <item>HowDidIEvenGetHere?</item>
-    </string-array>
 
     <string-array name="Foogle_Faces">
         <item>( ͡° ͜ʖ ͡°)</item>
@@ -106,5 +100,9 @@
     <string name="delete_string">DeleteString</string>
     <string name="Start">Start</string>
     <string name="Score">Score:</string>
+    <string name="description">Description</string>
+    <string name="GoToRewards">Go To Rewards</string>
+    <string name="Up">Up</string>
+    <string name="Down">Down</string>
 
 </resources>
