@@ -49,48 +49,48 @@ public class MainActivity extends AppCompatActivity {
         //ring.setLooping(true);
 
 
-        btnNext = (Button) findViewById(R.id.button8);
-        simpleImageSwitcher = (ImageSwitcher) findViewById(R.id.simpleImageSwitcher);
-        simpleImageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
-            @Override
-            public View makeView() {
-                ImageView imageView = new ImageView(getApplicationContext());
-                imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT));
-                return imageView;
-            }
-        });
-        if (count >= 0)
-            simpleImageSwitcher.setImageResource(imageIds[0]);
-        Animation in = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
-        Animation out = AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right);
-
-        simpleImageSwitcher.setInAnimation(in);
-        simpleImageSwitcher.setOutAnimation(out);
-
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                currentIndex++;
-                if (currentIndex >= count)
-                    currentIndex = 0;
-                simpleImageSwitcher.setImageResource(imageIds[currentIndex]);
-            }
-        });
-
-        FoogleRanchName = (EditText) findViewById(R.id.EditName);
-        FoogleRanchName.requestFocusFromTouch();
-        FoogleRanchName.clearFocus();
-
-        /*View decorView = getWindow().getDecorView();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
-            decorView.setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-                            */
+//        btnNext = (Button) findViewById(R.id.button8);
+//        simpleImageSwitcher = (ImageSwitcher) findViewById(R.id.simpleImageSwitcher);
+//        simpleImageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
+//            @Override
+//            public View makeView() {
+//                ImageView imageView = new ImageView(getApplicationContext());
+//                imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+//                imageView.setLayoutParams(new ImageSwitcher.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT));
+//                return imageView;
+//            }
+//        });
+//        if (count >= 0)
+//            simpleImageSwitcher.setImageResource(imageIds[0]);
+//        Animation in = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
+//        Animation out = AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right);
+//
+//        simpleImageSwitcher.setInAnimation(in);
+//        simpleImageSwitcher.setOutAnimation(out);
+//
+//        btnNext.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                currentIndex++;
+//                if (currentIndex >= count)
+//                    currentIndex = 0;
+//                simpleImageSwitcher.setImageResource(imageIds[currentIndex]);
+//            }
+//        });
+//
+//        FoogleRanchName = (EditText) findViewById(R.id.EditName);
+//        FoogleRanchName.requestFocusFromTouch();
+//        FoogleRanchName.clearFocus();
+//
+//        /*View decorView = getWindow().getDecorView();
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
+//            decorView.setSystemUiVisibility(
+//                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+//                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+//                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+//                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+//                            | View.SYSTEM_UI_FLAG_FULLSCREEN
+//                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+//                            */
     }
 
     public void selectGame(View view) {
