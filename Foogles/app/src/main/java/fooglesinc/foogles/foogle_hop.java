@@ -101,6 +101,8 @@ public class foogle_hop extends AppCompatActivity {
 //        });
 
 
+        // possible collision detection idea link
+        // https://stackoverflow.com/questions/19448816/collision-detection-using-objectanimation-or-translateanimation
 
     }
 

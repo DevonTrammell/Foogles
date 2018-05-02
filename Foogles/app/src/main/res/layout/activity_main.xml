@@ -37,7 +37,7 @@
         app:layout_constraintHorizontal_bias="0.803"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.464"
+        app:layout_constraintVertical_bias="0.443"
         app:srcCompat="@drawable/trainbutton" />
 
     <ImageButton
@@ -56,7 +56,7 @@
         app:layout_constraintHorizontal_bias="0.803"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.663"
+        app:layout_constraintVertical_bias="0.619"
         app:srcCompat="@drawable/trophybutton" />
 
     <ImageButton
@@ -75,7 +75,7 @@
         app:layout_constraintHorizontal_bias="0.803"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.862"
+        app:layout_constraintVertical_bias="0.799"
         app:srcCompat="@drawable/viewbutton" />
 
     <ImageView

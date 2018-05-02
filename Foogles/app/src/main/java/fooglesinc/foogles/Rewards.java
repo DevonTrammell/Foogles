@@ -22,6 +22,7 @@ public class Rewards extends AppCompatActivity {
         setContentView(R.layout.activity_rewards);
 
         Intent intent = getIntent();
+        /*
         String message = intent.getStringExtra(MainActivity.FOOGLE_NAME);
         if (message.equals("win"))
         {
@@ -55,7 +56,9 @@ public class Rewards extends AppCompatActivity {
             }
             randomStats.setText(changes);
         }
+    */
     }
+
     public void backToMain(View view)
     {
         Intent intent = new Intent(this, MainActivity.class);
