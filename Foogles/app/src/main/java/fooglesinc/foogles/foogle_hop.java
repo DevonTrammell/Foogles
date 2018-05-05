@@ -53,7 +53,7 @@ public class foogle_hop extends AppCompatActivity {
     }
 
 
-    public void makeAnimation(TimeInterpolator timeInterpolator)
+    public void makeJump(TimeInterpolator timeInterpolator)
     {
 
         ImageView foogle = (ImageView) findViewById(R.id.imageView10);
@@ -83,7 +83,7 @@ public class foogle_hop extends AppCompatActivity {
             public void onClick(View view)
            {
                final AccelerateDecelerateInterpolator accelerateDecelerateInterpolator = new AccelerateDecelerateInterpolator();
-               makeAnimation(accelerateDecelerateInterpolator);
+               makeJump(accelerateDecelerateInterpolator);
            }
         });
 

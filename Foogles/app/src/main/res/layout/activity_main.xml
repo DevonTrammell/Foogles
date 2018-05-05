@@ -23,8 +23,8 @@
 
     <ImageButton
         android:id="@+id/trainingButton"
-        android:layout_width="139dp"
-        android:layout_height="73dp"
+        android:layout_width="125dp"
+        android:layout_height="70dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -34,16 +34,16 @@
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.803"
+        app:layout_constraintHorizontal_bias="0.773"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.443"
-        app:srcCompat="@drawable/trainbutton" />
+        app:layout_constraintVertical_bias="0.498"
+        app:srcCompat="@drawable/salmon2" />
 
     <ImageButton
         android:id="@+id/TournamentButton"
-        android:layout_width="139dp"
-        android:layout_height="73dp"
+        android:layout_width="125dp"
+        android:layout_height="70dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -53,16 +53,16 @@
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.803"
+        app:layout_constraintHorizontal_bias="0.818"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619"
-        app:srcCompat="@drawable/trophybutton" />
+        app:layout_constraintTop_toBottomOf="@+id/trainingButton"
+        app:layout_constraintVertical_bias="0.012"
+        app:srcCompat="@drawable/salmon1" />
 
     <ImageButton
         android:id="@+id/createAfoogleButton"
-        android:layout_width="139dp"
-        android:layout_height="73dp"
+        android:layout_width="125dp"
+        android:layout_height="70dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -72,11 +72,11 @@
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.803"
+        app:layout_constraintHorizontal_bias="0.773"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.799"
-        app:srcCompat="@drawable/viewbutton" />
+        app:layout_constraintTop_toBottomOf="@+id/TournamentButton"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/salmon5" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -92,6 +92,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.058"
-        app:srcCompat="@drawable/fooglelogo" />
+        app:srcCompat="@drawable/logo2" />
 
 </android.support.constraint.ConstraintLayout>

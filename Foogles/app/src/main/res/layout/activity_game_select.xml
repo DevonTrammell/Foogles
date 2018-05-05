@@ -21,87 +21,61 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/basefull" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="160dp"
-        android:layout_height="60dp"
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="113dp"
+        android:layout_height="113dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:onClick="getFoogleforClimb"
-        android:text="@string/Foogle_Climb"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.616" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="160dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:onClick="getFoogleforFish"
-        android:text="@string/Foogle_Fish"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.961"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.383" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="160dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:onClick="getFoogleforWhack"
-        android:text="@string/Foogle_Whack"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.961"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.616" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="160dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:background="@drawable/invis"
         android:onClick="getFoogleforHop"
-        android:text="@string/Foogle_Hop"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintHorizontal_bias="0.286"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.383" />
+        app:layout_constraintVertical_bias="0.417"
+        app:srcCompat="@drawable/hop" />
 
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="296dp"
-        android:layout_height="184dp"
+    <ImageButton
+        android:id="@+id/imageButton9"
+        android:layout_width="113dp"
+        android:layout_height="113dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/invis"
+        android:onClick="getFoogleforClimb"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.286"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.021"
-        app:srcCompat="@drawable/trainbutton" />
+        app:layout_constraintVertical_bias="0.767"
+        app:srcCompat="@drawable/climb" />
+
+    <ImageButton
+        android:id="@+id/imageButton10"
+        android:layout_width="113dp"
+        android:layout_height="113dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/invis"
+        android:onClick="getFoogleforWhack"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.886"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.767"
+        app:srcCompat="@drawable/hammer" />
 
 </android.support.constraint.ConstraintLayout>
