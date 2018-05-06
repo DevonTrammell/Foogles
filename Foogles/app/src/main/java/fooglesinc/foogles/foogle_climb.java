@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.LinearInterpolator;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -40,6 +41,8 @@ public class foogle_climb extends AppCompatActivity {
 
         ImageView leftRock = (findViewById(R.id.imageView11));
         ImageView rightRock = (findViewById(R.id.imageView12));
+
+        ImageView rope = (findViewById(R.id.ROPING));
 
         leftRock.setVisibility(View.INVISIBLE);
         rightRock.setVisibility(View.INVISIBLE);
@@ -178,6 +181,21 @@ public class foogle_climb extends AppCompatActivity {
         rightButton.setVisibility(View.VISIBLE);
         startButton.setVisibility(View.INVISIBLE);
         startImage.setVisibility(View.INVISIBLE);
+
+        TranslateAnimation roping = new TranslateAnimation(0,0,200,700);
+        roping.setDuration(1500);
+        roping.setRepeatCount(20);
+        //roping.setFillAfter(true);
+
+        ImageView rope = findViewById(R.id.outside);
+        rope.startAnimation(roping);
+
+        TranslateAnimation clouds = new TranslateAnimation(350,-300,0,0);
+        clouds.setDuration(5000);
+        clouds.setRepeatCount(6);
+
+        ImageView cloud = findViewById(R.id.right);
+        cloud.startAnimation(clouds);
 
         leftClick(null); // initially begin on the left side of the screen
 

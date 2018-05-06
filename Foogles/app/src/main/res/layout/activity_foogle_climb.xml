@@ -6,6 +6,39 @@
     android:layout_height="match_parent"
     tools:context="fooglesinc.foogles.foogle_climb">
 
+
+    <ImageView
+        android:id="@+id/Background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/climbscreen" />
+
+
+    <AbsoluteLayout
+        android:layout_width="560dp"
+        android:layout_height="match_parent">
+        xmnls:android="http://schemas.android.com/apk/res/android">
+
+        <ImageView
+            android:id="@+id/right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_y="-200dp"
+            android:layout_x="-50dp"
+            android:maxHeight="1920dp"
+            android:maxWidth="1680dp"
+            android:src="@drawable/clouds" />
+    </AbsoluteLayout>
+
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="match_parent"
@@ -15,6 +48,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="29dp"
         android:scaleType="fitXY"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/button25"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -36,7 +70,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView6"
         app:layout_constraintVertical_bias="0.022"
-        app:srcCompat="@drawable/foogle_rock" />
+        app:srcCompat="@drawable/foogle_rock"
+        android:layout_marginLeft="8dp" />
 
     <ImageView
         android:id="@+id/walking_anim3"
@@ -83,7 +118,8 @@
         android:onClick="leftClick"
         android:text="@string/Left"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="76dp" />
 
     <Button
         android:id="@+id/button22"
@@ -94,7 +130,8 @@
         android:onClick="rightClick"
         android:text="@string/Right"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="76dp" />
 
     <ProgressBar
         android:id="@+id/progressBar3"
@@ -158,6 +195,31 @@
         app:layout_constraintTop_toTopOf="@+id/imageView6"
         app:layout_constraintVertical_bias="0.022"
         app:srcCompat="@drawable/foogle_rock" />
+
+    <AbsoluteLayout
+        android:layout_width="match_parent"
+        android:layout_height="1150dp">
+        xmnls:android="http://schemas.android.com/apk/res/android">
+
+        <ImageView
+            android:id="@+id/outside"
+            android:layout_width="wrap_content"
+            android:layout_height="1150dp"
+            android:layout_y="-400dp"
+            android:maxHeight="1920dp"
+            android:maxWidth="1080dp"
+            android:src="@drawable/rope2" />
+    </AbsoluteLayout>
+
+
+    <ImageView
+        android:id="@+id/ROPING"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/mvp_walk7" />
 
     <TextView
         android:id="@+id/textView5"
