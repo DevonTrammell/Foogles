@@ -23,8 +23,8 @@
 
     <ImageButton
         android:id="@+id/imageButton8"
-        android:layout_width="113dp"
-        android:layout_height="113dp"
+        android:layout_width="165dp"
+        android:layout_height="81dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -34,11 +34,10 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageView7"
-        app:layout_constraintHorizontal_bias="0.286"
+        app:layout_constraintHorizontal_bias="0.103"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.417"
-        app:srcCompat="@drawable/hop" />
+        app:srcCompat="@drawable/button_hop" />
 
     <ImageButton
         android:id="@+id/imageButton9"
@@ -53,16 +52,16 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.286"
+        app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.767"
+        app:layout_constraintVertical_bias="0.773"
         app:srcCompat="@drawable/climb" />
 
     <ImageButton
         android:id="@+id/imageButton10"
-        android:layout_width="113dp"
-        android:layout_height="113dp"
+        android:layout_width="165dp"
+        android:layout_height="81dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -72,11 +71,29 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.886"
+        app:layout_constraintHorizontal_bias="0.96"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.767"
-        app:srcCompat="@drawable/hammer" />
+        app:layout_constraintVertical_bias="0.768"
+        app:srcCompat="@drawable/button_whack" />
+
+    <ImageButton
+        android:id="@+id/imageButton11"
+        android:layout_width="166dp"
+        android:layout_height="81dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/invis"
+        android:onClick="getFoogleforFish"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button_fish" />
 
     <Button
         android:id="@+id/button4"

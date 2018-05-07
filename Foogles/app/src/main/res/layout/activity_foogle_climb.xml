@@ -109,30 +109,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/invis" />
 
-    <Button
-        android:id="@+id/button21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="88dp"
-        android:layout_marginStart="76dp"
-        android:onClick="leftClick"
-        android:text="@string/Left"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="76dp" />
-
-    <Button
-        android:id="@+id/button22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="88dp"
-        android:layout_marginEnd="76dp"
-        android:onClick="rightClick"
-        android:text="@string/Right"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="76dp" />
-
     <ProgressBar
         android:id="@+id/progressBar3"
         style="?android:attr/progressBarStyleHorizontal"
@@ -221,6 +197,26 @@
         android:visibility="invisible"
         app:srcCompat="@drawable/mvp_walk7" />
 
+    <ImageButton
+        android:id="@+id/leftButton"
+        android:layout_width="116dp"
+        android:layout_height="81dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/invis"
+        android:onClick="leftClick"
+        android:rotation="180"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.134"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.872"
+        app:srcCompat="@drawable/arrow" />
+
     <TextView
         android:id="@+id/textView5"
         android:layout_width="47dp"
@@ -241,5 +237,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.168"
         tools:text="0" />
+
+    <ImageButton
+        android:id="@+id/rightButton"
+        android:layout_width="116dp"
+        android:layout_height="81dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/invis"
+        android:onClick="rightClick"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.873"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.872"
+        app:srcCompat="@drawable/arrow" />
 
 </android.support.constraint.ConstraintLayout>
