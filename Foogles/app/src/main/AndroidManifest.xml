@@ -75,7 +75,6 @@
                 android:value=".MainActivity" />
         </activity>
 
-        <activity android:name=".Market"></activity>
     </application>
 
 </manifest>

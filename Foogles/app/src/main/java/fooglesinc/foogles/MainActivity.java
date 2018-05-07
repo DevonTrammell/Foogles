@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageSwitcher simpleImageSwitcher;
     Button btnNext;
     EditText FoogleRanchName;
+    int level = 1;
 
     int imageIds[] = {R.mipmap.ic_sticks, R.mipmap.ic_foogle_foreground, R.mipmap.ic_foogle_house, R.mipmap.ic_foogle_danger, R.mipmap.ic_sleep, R.mipmap.ic_abug};
     int count = imageIds.length;
@@ -113,10 +114,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void marketplace(View view) {
-        Intent intent = new Intent(this, Market.class);
-        startActivity(intent);
-    }
 
     public void editFoogle(View view) {
         Intent intent = new Intent(this, Edit.class);
