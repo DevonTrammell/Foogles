@@ -38,7 +38,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.498"
-        app:srcCompat="@drawable/salmon2" />
+        app:srcCompat="@drawable/button_train" />
 
     <ImageButton
         android:id="@+id/TournamentButton"
@@ -53,11 +53,11 @@
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.818"
+        app:layout_constraintHorizontal_bias="0.773"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/trainingButton"
-        app:layout_constraintVertical_bias="0.012"
-        app:srcCompat="@drawable/salmon1" />
+        app:layout_constraintVertical_bias="0.018"
+        app:srcCompat="@drawable/button_tourny" />
 
     <ImageButton
         android:id="@+id/createAfoogleButton"
@@ -76,7 +76,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TournamentButton"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/salmon5" />
+        app:srcCompat="@drawable/button_view" />
 
     <ImageView
         android:id="@+id/imageView8"
