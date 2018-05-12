@@ -99,7 +99,7 @@ public class whack_a_foogle extends AppCompatActivity
 
         if(dangerHole == UP_LEFT)
         {
-            topLeft.setImageResource(R.drawable.whackbuttonalmost);
+            topLeft.setImageResource(R.drawable.whack_pre);
 
 
             new CountDownTimer(3000, 1000)
@@ -110,14 +110,14 @@ public class whack_a_foogle extends AppCompatActivity
 
                     if(millisUntilFinished <= 2000 && millisUntilFinished > 0)
                     {
-                        topLeft.setImageResource(R.drawable.whackbuttonactive);
+                        topLeft.setImageResource(R.drawable.whack_up);
 
                         topLeft.setOnClickListener(new View.OnClickListener()
                         {
                             @Override
                             public void onClick(View view)
                             {
-                                topLeft.setImageResource(R.drawable.whackbuttontapped);
+                                topLeft.setImageResource(R.drawable.whack_hit);
                                 whackScore += 5;
                                 scoreBox.setText(Integer.toString(whackScore));
                             }
@@ -127,7 +127,7 @@ public class whack_a_foogle extends AppCompatActivity
 
                 public void onFinish()
                 {
-                    topLeft.setImageResource(R.drawable.whackbuttonidle);
+                    topLeft.setImageResource(R.drawable.empty_hole);
                     peekOut(null);
                 }
             }.start();
@@ -136,7 +136,7 @@ public class whack_a_foogle extends AppCompatActivity
         }
         else if(dangerHole == UP_RIGHT)
         {
-            topRight.setImageResource(R.drawable.whackbuttonalmost);
+            topRight.setImageResource(R.drawable.whack_pre);
             new CountDownTimer(3000, 1000)
             {
                 public void onTick(long millisUntilFinished)
@@ -146,14 +146,14 @@ public class whack_a_foogle extends AppCompatActivity
 
                     if(millisUntilFinished <= 2000 && millisUntilFinished > 0)
                     {
-                        topRight.setImageResource(R.drawable.whackbuttonactive);
+                        topRight.setImageResource(R.drawable.whack_up);
 
                         topRight.setOnClickListener(new View.OnClickListener()
                         {
                             @Override
                             public void onClick(View view)
                             {
-                                topRight.setImageResource(R.drawable.whackbuttontapped);
+                                topRight.setImageResource(R.drawable.whack_hit);
                                 whackScore += 5;
                                 scoreBox.setText(Integer.toString(whackScore));
                             }
@@ -164,14 +164,14 @@ public class whack_a_foogle extends AppCompatActivity
 
                 public void onFinish()
                 {
-                    topRight.setImageResource(R.drawable.whackbuttonidle);
+                    topRight.setImageResource(R.drawable.empty_hole);
                     peekOut(null);
                 }
             }.start();
         }
         else if(dangerHole == CENTER)
         {
-            center.setImageResource(R.drawable.whackbuttonalmost);
+            center.setImageResource(R.drawable.whack_pre);
             new CountDownTimer(3000, 1000)
             {
                 public void onTick(long millisUntilFinished)
@@ -181,14 +181,14 @@ public class whack_a_foogle extends AppCompatActivity
 
                     if(millisUntilFinished <= 2000 && millisUntilFinished > 0)
                     {
-                        center.setImageResource(R.drawable.whackbuttonactive);
+                        center.setImageResource(R.drawable.whack_up);
 
                         center.setOnClickListener(new View.OnClickListener()
                         {
                             @Override
                             public void onClick(View view)
                             {
-                                center.setImageResource(R.drawable.whackbuttontapped);
+                                center.setImageResource(R.drawable.whack_hit);
                                 whackScore += 5;
                                 scoreBox.setText(Integer.toString(whackScore));
                             }
@@ -198,14 +198,14 @@ public class whack_a_foogle extends AppCompatActivity
 
                 public void onFinish()
                 {
-                    center.setImageResource(R.drawable.whackbuttonidle);
+                    center.setImageResource(R.drawable.empty_hole);
                     peekOut(null);
                 }
             }.start();
         }
         else if(dangerHole == BOTTOM_LEFT)
         {
-            bottomLeft.setImageResource(R.drawable.whackbuttonalmost);
+            bottomLeft.setImageResource(R.drawable.whack_pre);
             new CountDownTimer(3000, 1000)
             {
                 public void onTick(long millisUntilFinished)
@@ -215,14 +215,14 @@ public class whack_a_foogle extends AppCompatActivity
 
                     if(millisUntilFinished <= 2000 && millisUntilFinished > 0)
                     {
-                        bottomLeft.setImageResource(R.drawable.whackbuttonactive);
+                        bottomLeft.setImageResource(R.drawable.whack_up);
 
                         bottomLeft.setOnClickListener(new View.OnClickListener()
                         {
                             @Override
                             public void onClick(View view)
                             {
-                                bottomLeft.setImageResource(R.drawable.whackbuttontapped);
+                                bottomLeft.setImageResource(R.drawable.whack_hit);
                                 whackScore += 5;
                                 scoreBox.setText(Integer.toString(whackScore));
                             }
@@ -232,14 +232,14 @@ public class whack_a_foogle extends AppCompatActivity
 
                 public void onFinish()
                 {
-                    bottomLeft.setImageResource(R.drawable.whackbuttonidle);
+                    bottomLeft.setImageResource(R.drawable.empty_hole);
                     peekOut(null);
                 }
             }.start();
         }
         else if(dangerHole == BOTTOM_RIGHT)
         {
-            bottomRight.setImageResource(R.drawable.whackbuttonalmost);
+            bottomRight.setImageResource(R.drawable.whack_pre);
             new CountDownTimer(3000, 1000)
             {
                 public void onTick(long millisUntilFinished)
@@ -249,14 +249,14 @@ public class whack_a_foogle extends AppCompatActivity
 
                     if(millisUntilFinished <= 2000 && millisUntilFinished > 0)
                     {
-                        bottomRight.setImageResource(R.drawable.whackbuttonactive);
+                        bottomRight.setImageResource(R.drawable.whack_up);
 
                         bottomRight.setOnClickListener(new View.OnClickListener()
                         {
                             @Override
                             public void onClick(View view)
                             {
-                                bottomRight.setImageResource(R.drawable.whackbuttontapped);
+                                bottomRight.setImageResource(R.drawable.whack_hit);
                                 whackScore += 5;
                                 scoreBox.setText(Integer.toString(whackScore));
                             }
@@ -267,14 +267,14 @@ public class whack_a_foogle extends AppCompatActivity
 
                 public void onFinish()
                 {
-                    bottomRight.setImageResource(R.drawable.whackbuttonidle);
+                    bottomRight.setImageResource(R.drawable.empty_hole);
                     peekOut(null);
                 }
             }.start();
         }
         else
         {
-            topLeft.setImageResource(R.drawable.whackbuttonalmost);
+            topLeft.setImageResource(R.drawable.whack_pre);
 
             new CountDownTimer(3000, 1000)
             {
@@ -284,14 +284,14 @@ public class whack_a_foogle extends AppCompatActivity
 
                     if(millisUntilFinished <= 1000 && millisUntilFinished > 0)
                     {
-                        topLeft.setImageResource(R.drawable.whackbuttonactive);
+                        topLeft.setImageResource(R.drawable.whack_up);
 
                         topLeft.setOnClickListener(new View.OnClickListener()
                         {
                             @Override
                             public void onClick(View view)
                             {
-                                topLeft.setImageResource(R.drawable.whackbuttontapped);
+                                topLeft.setImageResource(R.drawable.whack_hit);
                                 whackScore += 5;
                                 scoreBox.setText(Integer.toString(whackScore));
                             }
@@ -302,7 +302,7 @@ public class whack_a_foogle extends AppCompatActivity
 
                 public void onFinish()
                 {
-                    topLeft.setImageResource(R.drawable.whackbuttonidle);
+                    topLeft.setImageResource(R.drawable.empty_hole);
                     peekOut(null);
                 }
             }.start();
