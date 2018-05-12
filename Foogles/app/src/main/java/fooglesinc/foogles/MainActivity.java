@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    int imageIds[] = {R.mipmap.ic_sticks, R.mipmap.ic_foogle_foreground, R.mipmap.ic_foogle_house, R.mipmap.ic_foogle_danger, R.mipmap.ic_sleep, R.mipmap.ic_abug};
-    int count = imageIds.length;
-    int currentIndex = 0;
+    //int imageIds[] = {R.mipmap.ic_sticks, R.mipmap.ic_foogle_foreground, R.mipmap.ic_foogle_house, R.mipmap.ic_foogle_danger, R.mipmap.ic_sleep, R.mipmap.ic_abug};
+    //int count = imageIds.length;
+    //int currentIndex = 0;
 
     public MainActivity() throws FileNotFoundException {
     }
@@ -124,10 +124,10 @@ public class MainActivity extends AppCompatActivity {
     public void walkAFoogle(View view) {
         //Intent intent = new Intent(this, Walk.class);
         //startActivity(intent);
-        Intent intent = new Intent(this, ChooseFoogle.class);
-        String mode = "Walk";
-        intent.putExtra(EXTRA_MESSAGE, mode);
-        startActivity(intent);
+        //Intent intent = new Intent(this, ChooseFoogle.class);
+        //String mode = "Walk";
+        //intent.putExtra(EXTRA_MESSAGE, mode);
+        //startActivity(intent);
     }
 
 
