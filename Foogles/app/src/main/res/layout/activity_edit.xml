@@ -4,88 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/basesmall"
     tools:context="fooglesinc.foogles.Edit">
-
-
-    <EditText
-        android:id="@+id/Name"
-        android:layout_width="140dp"
-        android:layout_height="69dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:focusable="true"
-        android:gravity="center"
-        android:hint="Enter a Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="142dp" />
 
 
     <Button
         android:id="@+id/button12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="272dp"
+        android:layout_height="46dp"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:onClick="saveFoogle"
-        android:text="@string/Save"
+        android:text="Next"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-
-    <Spinner
-        android:id="@+id/spinner_Color"
-        android:layout_width="347dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="248dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/Name"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/Name" />
-
-    <Spinner
-        android:id="@+id/spinner_costume"
-        android:layout_width="347dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/spinner_misc"
-        app:layout_constraintEnd_toEndOf="@+id/spinner_Color"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/spinner_Color"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_Color"
-        app:layout_constraintVertical_bias="0.6"
-        android:layout_marginLeft="8dp" />
-
-    <Spinner
-        android:id="@+id/spinner_misc"
-        android:layout_width="347dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="81dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/button12"
-        app:layout_constraintEnd_toEndOf="@+id/spinner_costume"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/spinner_costume"
-        android:layout_marginRight="8dp" />
-
-    <ImageView
-        android:id="@+id/imageView16"
-        android:layout_width="247dp"
-        android:layout_height="137dp"
-        android:layout_marginBottom="8dp"
+    <ImageSwitcher
+        android:id="@+id/imageSwitcher"
+        android:layout_width="379dp"
+        android:layout_height="379dp"
+        android:layout_marginBottom="116dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/viewbutton" />
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageSwitcher>
+
 
 </android.support.constraint.ConstraintLayout>

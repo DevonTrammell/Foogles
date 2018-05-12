@@ -4,58 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/climbscreen"
     tools:context="fooglesinc.foogles.foogle_climb">
 
-
-    <ImageView
-        android:id="@+id/Background"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/climbscreen" />
-
-
-    <AbsoluteLayout
-        android:layout_width="560dp"
-        android:layout_height="match_parent">
-        xmnls:android="http://schemas.android.com/apk/res/android">
-
-        <ImageView
-            android:id="@+id/right"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_y="-200dp"
-            android:layout_x="-50dp"
-            android:maxHeight="1920dp"
-            android:maxWidth="1680dp"
-            android:src="@drawable/clouds" />
-    </AbsoluteLayout>
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="match_parent"
-        android:layout_height="509dp"
-        android:layout_marginBottom="2dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="29dp"
-        android:scaleType="fitXY"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/button25"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.449"
-        app:srcCompat="@drawable/climb_background" />
 
     <ImageView
         android:id="@+id/imageView12"
@@ -68,15 +19,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.022"
-        app:srcCompat="@drawable/foogle_rock"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.112"
+        app:srcCompat="@drawable/danger"
         android:layout_marginLeft="8dp" />
 
     <ImageView
         android:id="@+id/walking_anim3"
-        android:layout_width="161dp"
-        android:layout_height="148dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -85,7 +36,7 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.753"
+        app:layout_constraintHorizontal_bias="0.917"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.498"
@@ -93,8 +44,8 @@
 
     <ImageView
         android:id="@+id/walking_anim2"
-        android:layout_width="155dp"
-        android:layout_height="149dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -104,7 +55,31 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498"
+        app:srcCompat="@drawable/invis" />
+
+    <ImageView
+        android:id="@+id/ropefully"
+        android:layout_width="458dp"
+        android:layout_height="574dp"
+        android:adjustViewBounds="false"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/invis" />
+
+    <ImageView
+        android:id="@+id/cloudfully"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/invis" />
@@ -154,7 +129,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.636"
-        app:srcCompat="@drawable/walk_invisible1" />
+        app:srcCompat="@drawable/mvp_walk1" />
 
     <ImageView
         android:id="@+id/imageView11"
@@ -166,39 +141,15 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.186"
+        app:layout_constraintHorizontal_bias="0.241"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.022"
-        app:srcCompat="@drawable/foogle_rock" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.112"
+        app:srcCompat="@drawable/danger" />
 
-    <AbsoluteLayout
-        android:layout_width="match_parent"
-        android:layout_height="1150dp">
-        xmnls:android="http://schemas.android.com/apk/res/android">
-
-        <ImageView
-            android:id="@+id/outside"
-            android:layout_width="wrap_content"
-            android:layout_height="1150dp"
-            android:layout_y="-400dp"
-            android:maxHeight="1920dp"
-            android:maxWidth="1080dp"
-            android:src="@drawable/rope2" />
-    </AbsoluteLayout>
-
-
-    <ImageView
-        android:id="@+id/ROPING"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/mvp_walk7" />
 
     <ImageButton
-        android:id="@+id/leftButton"
+        android:id="@+id/moveLeft"
         android:layout_width="116dp"
         android:layout_height="81dp"
         android:layout_marginBottom="8dp"
@@ -239,7 +190,7 @@
         tools:text="0" />
 
     <ImageButton
-        android:id="@+id/rightButton"
+        android:id="@+id/moveRight"
         android:layout_width="116dp"
         android:layout_height="81dp"
         android:layout_marginBottom="8dp"
@@ -256,5 +207,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.872"
         app:srcCompat="@drawable/arrow" />
+
 
 </android.support.constraint.ConstraintLayout>

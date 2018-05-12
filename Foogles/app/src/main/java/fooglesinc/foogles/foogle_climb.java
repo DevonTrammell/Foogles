@@ -9,9 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -33,16 +35,14 @@ public class foogle_climb extends AppCompatActivity {
         Intent intent = getIntent();
         message = intent.getStringExtra(MainActivity.FOOGLE_NAME);
 
-        Button leftButton = (Button) findViewById(R.id.button21);
-        Button rightButton = (Button) findViewById(R.id.button22);
+        ImageButton leftButton = (ImageButton) findViewById(R.id.moveLeft);
+        ImageButton rightButton = (ImageButton) findViewById(R.id.moveRight);
 
         leftButton.setVisibility(View.INVISIBLE);
         rightButton.setVisibility(View.INVISIBLE);
 
         ImageView leftRock = (findViewById(R.id.imageView11));
         ImageView rightRock = (findViewById(R.id.imageView12));
-
-        ImageView rope = (findViewById(R.id.ROPING));
 
         leftRock.setVisibility(View.INVISIBLE);
         rightRock.setVisibility(View.INVISIBLE);
@@ -67,37 +67,37 @@ public class foogle_climb extends AppCompatActivity {
         startActivity(intent);
     }
 
-   public void fallLeft(View view)
-   {
-       ImageView leftRock = (findViewById(R.id.imageView11));
+    public void fallLeft(View view)
+    {
+        ImageView leftRock = (findViewById(R.id.imageView11));
 
-       leftRock.setVisibility(View.VISIBLE);
+        leftRock.setVisibility(View.VISIBLE);
 
-       ObjectAnimator fallingLeft = ObjectAnimator.ofFloat(leftRock, "translationY", 0f, 900f);
+        ObjectAnimator fallingLeft = ObjectAnimator.ofFloat(leftRock, "translationY", 0f, 900f);
 
-       fallingLeft.setDuration(3000);
+        fallingLeft.setDuration(3000);
 
-       // the linear interpolator was an attempt at repeating the animation
-       // feel free to try and make that approach work.
+        // the linear interpolator was an attempt at repeating the animation
+        // feel free to try and make that approach work.
 
-       //    fallingLeft.setInterpolator(new LinearInterpolator());
-       //    fallingLeft.setRepeatMode(ObjectAnimator.RESTART);
+        //    fallingLeft.setInterpolator(new LinearInterpolator());
+        //    fallingLeft.setRepeatMode(ObjectAnimator.RESTART);
 
-       fallingLeft.start();
-   }
+        fallingLeft.start();
+    }
 
-   public void fallRight(View view)
-   {
-       ImageView rightRock = (findViewById(R.id.imageView12));
+    public void fallRight(View view)
+    {
+        ImageView rightRock = (findViewById(R.id.imageView12));
 
-       rightRock.setVisibility(View.VISIBLE);
+        rightRock.setVisibility(View.VISIBLE);
 
-       ObjectAnimator fallingRight = ObjectAnimator.ofFloat(rightRock, "translationY", 0f, 900f);
+        ObjectAnimator fallingRight = ObjectAnimator.ofFloat(rightRock, "translationY", 0f, 900f);
 
-       fallingRight.setDuration(3000);
+        fallingRight.setDuration(3000);
 
-       fallingRight.start();
-   }
+        fallingRight.start();
+    }
 
     public void rockStorm(View view)
     {
@@ -171,8 +171,8 @@ public class foogle_climb extends AppCompatActivity {
 
 
         Button startButton = (Button) findViewById(R.id.button25);
-        Button leftButton = (Button) findViewById(R.id.button21);
-        Button rightButton = (Button) findViewById(R.id.button22);
+        ImageButton leftButton = (ImageButton) findViewById(R.id.moveLeft);
+        ImageButton rightButton = (ImageButton) findViewById(R.id.moveRight);
 
         ImageView startImage = (ImageView) findViewById(R.id.imageView10);
 
@@ -182,20 +182,43 @@ public class foogle_climb extends AppCompatActivity {
         startButton.setVisibility(View.INVISIBLE);
         startImage.setVisibility(View.INVISIBLE);
 
-        TranslateAnimation roping = new TranslateAnimation(0,0,200,700);
-        roping.setDuration(1500);
-        roping.setRepeatCount(20);
+        final ImageView leftAnim = (ImageView) findViewById(R.id.walking_anim2);
+
+        leftAnim.setBackgroundResource(R.drawable.mvp_walk);
+
+        AnimationDrawable WeWalking = (AnimationDrawable) leftAnim.getBackground();
+
+        WeWalking.stop();
+        WeWalking.start();
+
+        final ImageView rope = (ImageView) findViewById(R.id.ropefully);
+        rope.setBackgroundResource(R.drawable.rop_anim);
+        AnimationDrawable weRop = (AnimationDrawable) rope.getBackground();
+
+        weRop.stop();
+        weRop.start();
+
+        final ImageView clouds = (ImageView) findViewById(R.id.cloudfully);
+        clouds.setBackgroundResource(R.drawable.clouds_anim);
+        AnimationDrawable weClouds = (AnimationDrawable) clouds.getBackground();
+
+        weClouds.stop();
+        weClouds.start();
+
+        //TranslateAnimation roping = new TranslateAnimation(0,0,200,700);
+        //roping.setDuration(1500);
+        //roping.setRepeatCount(20);
         //roping.setFillAfter(true);
 
-        ImageView rope = findViewById(R.id.outside);
-        rope.startAnimation(roping);
+        //ImageView rope = findViewById(R.id.outside);
+        //rope.startAnimation(roping);
 
-        TranslateAnimation clouds = new TranslateAnimation(350,-300,0,0);
-        clouds.setDuration(5000);
-        clouds.setRepeatCount(6);
+        //TranslateAnimation clouds = new TranslateAnimation(350,-300,0,0);
+        //clouds.setDuration(5000);
+        //clouds.setRepeatCount(6);
 
-        ImageView cloud = findViewById(R.id.right);
-        cloud.startAnimation(clouds);
+        //ImageView cloud = findViewById(R.id.right);
+        //cloud.startAnimation(clouds);
 
         leftClick(null); // initially begin on the left side of the screen
 
@@ -220,14 +243,14 @@ public class foogle_climb extends AppCompatActivity {
             }
         }.start();
 
-            rockStorm(null);
+        rockStorm(null);
     }
 
     public void leftClick(View view) {
 
         final ImageView leftAnim = (ImageView) findViewById(R.id.walking_anim2);
 
-        leftAnim.setBackgroundResource(R.drawable.walk_anim);
+        leftAnim.setBackgroundResource(R.drawable.mvp_walk);
 
         AnimationDrawable WeWalking = (AnimationDrawable) leftAnim.getBackground();
 
@@ -236,7 +259,7 @@ public class foogle_climb extends AppCompatActivity {
 
         final ImageView rightAnim = (ImageView) findViewById(R.id.walking_anim3);
 
-        rightAnim.setBackgroundResource(R.drawable.walk_anim);
+        rightAnim.setBackgroundResource(R.drawable.mvp_walk);
 
         AnimationDrawable NoWalking = (AnimationDrawable) leftAnim.getBackground();
 
@@ -251,7 +274,7 @@ public class foogle_climb extends AppCompatActivity {
 
         final ImageView rightAnim = (ImageView) findViewById(R.id.walking_anim3);
 
-        rightAnim.setBackgroundResource(R.drawable.walk_anim);
+        rightAnim.setBackgroundResource(R.drawable.mvp_walk);
 
         AnimationDrawable WeWalking = (AnimationDrawable) rightAnim.getBackground();
 
@@ -259,7 +282,7 @@ public class foogle_climb extends AppCompatActivity {
         WeWalking.start();
 
         final ImageView leftAnim = (ImageView) findViewById(R.id.walking_anim2);
-        leftAnim.setBackgroundResource(R.drawable.walk_anim);
+        leftAnim.setBackgroundResource(R.drawable.mvp_walk);
 
         AnimationDrawable NoWalking = (AnimationDrawable) leftAnim.getBackground();
 

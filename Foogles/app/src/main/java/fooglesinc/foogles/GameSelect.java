@@ -53,10 +53,10 @@ public class GameSelect extends AppCompatActivity{
         intent.putExtra(EXTRA_MESSAGE, mode);
         startActivity(intent);
     }
-    public void getFoogleforSwim(View view) {
+    public void getFoogleforWalk(View view) {
 //        Intent intent = new Intent(this, ChooseFoogle.class);
-        Intent intent = new Intent(this,foogle_swim.class);
-        String mode = "Foogle Swim";
+        Intent intent = new Intent(this,Walk.class);
+        String mode = "Foogle Walk";
         intent.putExtra(EXTRA_MESSAGE, mode);
         startActivity(intent);
     }

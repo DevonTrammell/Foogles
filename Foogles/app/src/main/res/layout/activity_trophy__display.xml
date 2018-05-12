@@ -17,7 +17,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_trophy_foreground" />
+        app:srcCompat="@drawable/medal_gold" />
 
     <TextView
         android:id="@+id/textView"

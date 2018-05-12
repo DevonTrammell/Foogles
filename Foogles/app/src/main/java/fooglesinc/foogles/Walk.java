@@ -79,9 +79,5 @@ public class Walk extends AppCompatActivity {
             }
         });
     }
-    public void rewardFoogle(View view) {
-        Intent intent = new Intent(this, Rewards.class);
-        intent.putExtra(MainActivity.FOOGLE_NAME, message);
-        startActivity(intent);
-    }
+
 }
