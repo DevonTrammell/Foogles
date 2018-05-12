@@ -4,18 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/hopscreen"
     tools:context="fooglesinc.foogles.foogle_hop">
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/grass" />
 
     <ProgressBar
         android:id="@+id/progressBar3"
@@ -118,6 +109,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.76"
-        app:srcCompat="@drawable/purple_walk3" />
+        app:srcCompat="@drawable/purple_walk3"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="204dp" />
 
 </android.support.constraint.ConstraintLayout>
