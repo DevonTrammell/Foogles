@@ -73,9 +73,9 @@ public class foogle_climb extends AppCompatActivity {
 
         leftRock.setVisibility(View.VISIBLE);
 
-        ObjectAnimator fallingLeft = ObjectAnimator.ofFloat(leftRock, "translationY", 0f, 900f);
+        ObjectAnimator fallingLeft = ObjectAnimator.ofFloat(leftRock, "translationY", 0f, 2000f);
 
-        fallingLeft.setDuration(3000);
+        fallingLeft.setDuration(4000);
 
         // the linear interpolator was an attempt at repeating the animation
         // feel free to try and make that approach work.
@@ -92,9 +92,9 @@ public class foogle_climb extends AppCompatActivity {
 
         rightRock.setVisibility(View.VISIBLE);
 
-        ObjectAnimator fallingRight = ObjectAnimator.ofFloat(rightRock, "translationY", 0f, 900f);
+        ObjectAnimator fallingRight = ObjectAnimator.ofFloat(rightRock, "translationY", 0f, 2000f);
 
-        fallingRight.setDuration(3000);
+        fallingRight.setDuration(4000);
 
         fallingRight.start();
     }
@@ -105,6 +105,11 @@ public class foogle_climb extends AppCompatActivity {
         final ImageView leftAnim = (ImageView) findViewById(R.id.walking_anim2);
 
         final ImageView rightAnim = (ImageView) findViewById(R.id.walking_anim3);
+
+        final ImageView leftRock = (findViewById(R.id.imageView11));
+
+        final ImageView rightRock = (findViewById(R.id.imageView12));
+
 
         //generate a random number to determine which side will fall
         Random sideChoice = new Random();
@@ -136,11 +141,21 @@ public class foogle_climb extends AppCompatActivity {
                             && rightAnim.getVisibility() == View.INVISIBLE )
                     {
                         score -= 5;
+                        leftAnim.setBackgroundResource(R.drawable.hurtmvp);
+                        leftRock.setVisibility(View.INVISIBLE);
                         scoreDisplay.setText(Integer.toString(score));
                     }
                 }
 
-                public void onFinish(){rockStorm(null);}
+                public void onFinish(){
+                    leftAnim.setBackgroundResource(R.drawable.mvp_walk);
+
+                    AnimationDrawable WeWalking = (AnimationDrawable) leftAnim.getBackground();
+                    WeWalking.stop();
+                    WeWalking.start();
+
+                    rockStorm(null);
+                }
             }.start();
         }
         else if (dangerSide == right)
@@ -158,11 +173,21 @@ public class foogle_climb extends AppCompatActivity {
                             && rightAnim.getVisibility() == View.VISIBLE )
                     {
                         score -= 5;
+                        rightAnim.setBackgroundResource(R.drawable.hurtmvp);
+                        rightRock.setVisibility(View.INVISIBLE);
                         scoreDisplay.setText(Integer.toString(score));
                     }
                 }
 
-                public void onFinish(){rockStorm(null);}
+                public void onFinish(){
+                    rightAnim.setBackgroundResource(R.drawable.mvp_walk);
+
+                    AnimationDrawable WeWalking = (AnimationDrawable) rightAnim.getBackground();
+                    WeWalking.stop();
+                    WeWalking.start();
+
+                    rockStorm(null);
+                }
             }.start();
         }
     }
