@@ -79,9 +79,5 @@ public class Walk extends AppCompatActivity {
             }
         });
     }
-    public void walkAnimation(View view) {
-        Intent intent = new Intent(this, walk_animation.class);
-        intent.putExtra(MainActivity.FOOGLE_NAME, message);
-        startActivity(intent);
-    }
+
 }
