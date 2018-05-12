@@ -61,18 +61,19 @@ public class foogle_hop extends AppCompatActivity {
 
         float distance = 1600;
         float propertyStart = 0f;
-        float propertyEnd = -(distance - (float)thrownFoogle.getHeight()/2);
+        float propertyEnd = -(distance - (float)thrownFoogle.getWidth()/2);
 
         String propertyName = "translationX";
 
         ObjectAnimator toss = ObjectAnimator.ofFloat(thrownFoogle,propertyName, propertyStart, propertyEnd);
 
 
-        toss.setDuration(1800);
+        toss.setDuration(2000);
         //toss.setRepeatCount(1);
         //toss.setRepeatMode(ObjectAnimator.REVERSE);
         toss.setInterpolator(timeInterpolator);
         toss.start();
+
     }
 
     public void tossFoogle(View view)
@@ -133,6 +134,7 @@ public class foogle_hop extends AppCompatActivity {
     {
 
         ImageView foogle = (ImageView) findViewById(R.id.jumpingFoogle);
+        ImageView dangerFoogle = (ImageView) findViewById(R.id.flyingFoogle);
 
         float height = 750;
         float propertyStart = 0f;
@@ -150,6 +152,8 @@ public class foogle_hop extends AppCompatActivity {
         jump.setInterpolator(timeInterpolator);
         jump.start();
 
+
+
         //  foogle.setImageResource(R.drawable.sonic_walk3);
     }
 
@@ -157,7 +161,7 @@ public class foogle_hop extends AppCompatActivity {
     public void jumping(View view)
     {
 
-         ImageView foogle = (ImageView) findViewById(R.id.jumpingFoogle);
+        ImageView foogle = (ImageView) findViewById(R.id.jumpingFoogle);
 
 
         Button jump = (Button) findViewById(R.id.jumpButton);
@@ -190,8 +194,26 @@ public class foogle_hop extends AppCompatActivity {
 //        });
 
 
-        // possible collision detection idea link
-        // https://stackoverflow.com/questions/19448816/collision-detection-using-objectanimation-or-translateanimation
+// collision detection from  http://proquest.safaribooksonline.com.summit.csuci.edu:2048/book/programming/android/9781785880957/firstchapter#X2ludGVybmFsX0h0bWxWaWV3P3htbGlkPTk3ODE3ODU4ODA5NTclMkY0MDNiOGJmOV8wMzcxXzQxZjRfYTEzYl9jNjE4Y2VmNmViYWZfeGh0bWwmcXVlcnk9
+//        rectangle1 = {x: 5, y: 5, width: 50, height: 50}
+//        rectangle2 = {x: 20, y: 10, width: 10, height: 10}
+//
+//        if(rectangle1.x < rectangle2.x + rectangle2.width
+//          && rectangle1.width > rectangle2.x
+//          && rectangle1.y < rectangle2.y + rectangle2.height
+//          && rectangle1.height + rectangle1.y > rectangle2.y)
+//        {
+//            //Bounding Box Collision Detected
+//        }
+//
+//// Taking the values from our variables
+//        if (5 < 30 && 55 > 20 && 5 < 20 && 55 > 10) {
+//            // Bounding Box Collision Detected!
+//        }
+
+
+
+
 
     }
 
