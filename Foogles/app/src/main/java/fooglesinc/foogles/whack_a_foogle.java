@@ -1,6 +1,7 @@
 package fooglesinc.foogles;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -333,6 +334,12 @@ public class whack_a_foogle extends AppCompatActivity
 
             public void onFinish()
             {
+                SharedPreferences sp = getSharedPreferences("MyPrefs",0);
+                SharedPreferences.Editor editor = sp.edit();
+                int n = sp.getInt("score",0);
+                n += whackScore;
+                editor.putInt("score",n);
+                editor.apply();
                 rewardFoogle(null);
                 whackScore = 0;
             }

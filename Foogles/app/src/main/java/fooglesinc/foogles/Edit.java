@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -47,8 +48,8 @@ public class Edit extends AppCompatActivity {
         setContentView(R.layout.activity_edit);
 
 
-        nameBox = findViewById(R.id.Name);
-        String name = nameBox.getText().toString();
+        //nameBox = findViewById(R.id.Name);
+        //String name = nameBox.getText().toString();
 
 
 

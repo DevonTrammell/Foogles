@@ -1,6 +1,8 @@
 package fooglesinc.foogles;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,10 +32,18 @@ public class MainActivity extends AppCompatActivity {
     public static final String WHEN_STATUS = "com.example.foogles.WHEN";
     public static final String PET_STATUS = "com.example.foogles.PET";
     public static final String DIFFICULTY = "com.example.foogles.DIFF";
+    //public static final String CHANGELEVEL = "com.example.foogles.LVL";
+    //public static final String SCORE = "com.example.foogles.SCORE";
+    public static final String MYPREFS = "MyPrefs";
+    public static final String LEVEL = "level";
+    public static final String SCORE = "score";
     private ImageSwitcher simpleImageSwitcher;
     Button btnNext;
     EditText FoogleRanchName;
-    int level = 1;
+
+
+
+
 
     int imageIds[] = {R.mipmap.ic_sticks, R.mipmap.ic_foogle_foreground, R.mipmap.ic_foogle_house, R.mipmap.ic_foogle_danger, R.mipmap.ic_sleep, R.mipmap.ic_abug};
     int count = imageIds.length;
@@ -50,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_main);
+
+        SharedPreferences sp = getSharedPreferences(MYPREFS, 0);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putInt(LEVEL, 1);
+        editor.putInt(SCORE, 0);
+        editor.apply();
 
         //MediaPlayer ring = create(MainActivity.this, R.raw.mariothemesong);
         //ring.start();
