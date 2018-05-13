@@ -7,12 +7,13 @@
     tools:context="fooglesinc.foogles.foogle_fish">
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/FoogleFishBackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/invis"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -21,49 +22,71 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/fishscreen" />
 
-    <ProgressBar
-        android:id="@+id/progressBar5"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="0dp"
-        android:layout_height="51dp"
+    <ImageView
+        android:id="@+id/FishingFoogle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="352dp"
+        android:rotationY="180"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/purple_walk" />
+
+    <ImageView
+        android:id="@+id/ExclamationPoint"
+        android:layout_width="129dp"
+        android:layout_height="159dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/CatchButton"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="@+id/CatchButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.078" />
-    <Button
-        android:id="@+id/button25"
-        android:layout_width="158dp"
-        android:layout_height="62dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="424dp"
-        android:onClick="rewardFoogle"
-        android:text="@string/Okay_Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar3" />
+        app:layout_constraintVertical_bias="0.558"
+        app:srcCompat="@drawable/exclamation" />
 
     <ImageButton
-        android:id="@+id/imageButton12"
-        android:layout_width="172dp"
-        android:layout_height="83dp"
+        android:id="@+id/CatchButton"
+        android:layout_width="386dp"
+        android:layout_height="567dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="396dp"
         android:background="@drawable/invis"
         android:scaleType="fitXY"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.225"
+        app:layout_constraintVertical_bias="0.98"
         app:srcCompat="@drawable/button_fish" />
+
+    <Button
+        android:id="@+id/startButton"
+        style="@android:style/Widget.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="startFishing"
+        android:text="@string/start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.934" />
 
 </android.support.constraint.ConstraintLayout>

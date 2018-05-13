@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_element"
+    android:layout_width="240dp"
+    android:layout_height="285dp"
+    android:layout_marginTop="140dp"
+    android:layout_marginLeft="70dp"
+    android:background="@drawable/fishpopup">
+
+    <!--Sea Horse popup window-->
+    <ImageView
+        android:id="@+id/SHorseImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/shorse" />
+
+    <TextView
+        android:id="@+id/SHorseText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/YouCaughtA"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <TextView
+        android:id="@+id/SHorseText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/SHorseText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <!--Barred Knifejaw popup window-->
+    <ImageView
+        android:id="@+id/BarredImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/barred" />
+
+    <TextView
+        android:id="@+id/BarredText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/YouCaughtA"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <TextView
+        android:id="@+id/BarredText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/BarredText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <!--Octopus popup window-->
+    <ImageView
+        android:id="@+id/OctopusImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/octo" />
+
+    <TextView
+        android:id="@+id/OctopusText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/YouCaughtAn"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <TextView
+        android:id="@+id/OctopusText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/OctopusText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <!--Angler popup window-->
+    <ImageView
+        android:id="@+id/AnglerImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/angler" />
+
+    <TextView
+        android:id="@+id/AnglerText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/YouCaughtAn"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <TextView
+        android:id="@+id/AnglerText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/AnglerText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <!--Shark popup window-->
+    <ImageView
+        android:id="@+id/SharkImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/shark2" />
+
+    <TextView
+        android:id="@+id/SharkText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/YouCaughtA"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <TextView
+        android:id="@+id/SharkText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/SharkText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <!--Close button-->
+    <Button
+        android:id="@+id/close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="rewardFoogle"
+        android:text="@string/close" />
+</RelativeLayout>

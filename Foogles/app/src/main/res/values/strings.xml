@@ -110,5 +110,14 @@
     <string name="GoToRewards">Go To Rewards</string>
     <string name="Up">Up</string>
     <string name="Down">Down</string>
+    <string name="start">Start</string>
+    <string name="YouCaughtA">You caught a</string>
+    <string name="YouCaughtAn">You caught an</string>
+    <string name="SHorseText">Sea Horse</string>
+    <string name="BarredText">Barred Knifejaw</string>
+    <string name="OctopusText">Octopus</string>
+    <string name="AnglerText">Angler Fish</string>
+    <string name="SharkText">Shark</string>
+    <string name="close">Close</string>
 
 </resources>
