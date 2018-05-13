@@ -73,10 +73,8 @@ public class foogle_fish extends AppCompatActivity {
 
         final ImageButton catchButton = (ImageButton) findViewById(R.id.CatchButton);
 
+        waitForBite(null);
 
-        {
-            waitForBite(null);
-        }
             //startFishing(null);
     }
 
@@ -88,15 +86,15 @@ public class foogle_fish extends AppCompatActivity {
         final ImageButton catchButton = (ImageButton) findViewById(R.id.CatchButton);
 
 
-        new CountDownTimer(4000, 500)
+        new CountDownTimer(10000, 500)
         {
             public void onTick(long millisUntilFinished)
             {
-                if (millisUntilFinished <= 3000)
+                if (millisUntilFinished <= 5000)
                 {
                     fishAvailable.setVisibility(View.VISIBLE);
 
-                    if (millisUntilFinished <= 2500)
+                    if (millisUntilFinished <= 4500)
                     {
                         catchButton.setVisibility(View.VISIBLE);
 
@@ -107,7 +105,7 @@ public class foogle_fish extends AppCompatActivity {
                             {
                                 showFish(null);
 
-                                rewardFoogle(null);
+                                cancel();
                             }
                         });
                     }
@@ -116,11 +114,14 @@ public class foogle_fish extends AppCompatActivity {
 
             public void onFinish()
             {
+
+                waitForBite(null);
+
                 fishAvailable.setVisibility(View.INVISIBLE);
 
                 catchButton.setVisibility(View.INVISIBLE);
 
-                waitForBite(null);
+
             }
         }.start();
     }
@@ -140,137 +141,118 @@ public class foogle_fish extends AppCompatActivity {
 
     public void showFish(View view)
     {
-        long displayTime = 10000;
-        long displayIncrement = 1000;
-        int popupWidth = 960;
-        int popupHeight = 1140;
-        //Get the instance of the LayoutInflater using the context of this activity
-        LayoutInflater inflater = (LayoutInflater) foogle_fish.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-        //Inflate the view from a predefined XML layout (no need for root id, using entire layout)
-        //View layout = inflater.inflate(R.layout.popuplayout,null);
-
         int randomFish = randomizeFish();
+
+        long gloatTime = 5000;
+
+        long increment = 1000;
+
+        final ImageView caughtFish = (ImageView) findViewById(R.id.caughtReward);
+
+        final ImageView fishAvailable = (ImageView) findViewById(R.id.ExclamationPoint);
+
+        final ImageButton catchButton = (ImageButton) findViewById(R.id.CatchButton);
+
+        fishAvailable.setVisibility(View.INVISIBLE);
+
+        catchButton.setVisibility(View.INVISIBLE);
 
         //caught fish is Sea Horse
         if(randomFish == 1)
         {
-            View layout = inflater.inflate(R.layout.shorse_popup,null);
 
-            // create a focusable PopupWindow with the given layout
-            final PopupWindow displayFish = new PopupWindow(layout, popupWidth, popupHeight, true);
-
-            new CountDownTimer(10000,1000)
+            new CountDownTimer(gloatTime, increment)
             {
-
                 public void onTick(long millisUntilFinished)
                 {
-                    // empty on tick, just need this for the timer to work.
+                    caughtFish.setImageResource(R.drawable.caughtseahorse);
+
                 }
 
-                public void onFinish() {
-                    displayFish.dismiss();
+                public void onFinish()
+                {
+                    rewardFoogle(null);
                 }
             }.start();
 
-            displayFish.showAtLocation(layout, Gravity.CENTER, 0, 0);
         }
 
         //caught fish is Barred Knifejaw
         else if(randomFish == 2)
         {
 
-            View layout = inflater.inflate(R.layout.knifejaw_popup,null);
 
-            // create a focusable PopupWindow with the given layout
-            final PopupWindow displayFish = new PopupWindow(layout,  popupWidth, popupHeight, true);
-
-            new CountDownTimer(10000,1000)
+            new CountDownTimer(gloatTime, increment)
             {
                 public void onTick(long millisUntilFinished)
                 {
+                    caughtFish.setImageResource(R.drawable.caughtbarred);
 
                 }
 
                 public void onFinish()
                 {
-                    displayFish.dismiss();
+                    rewardFoogle(null);
                 }
             }.start();
-
-            displayFish.showAtLocation(layout, Gravity.CENTER, 0, 0);
 
         }
 
         //caught fish is Octopus
         else if(randomFish == 3)
         {
-            View layout = inflater.inflate(R.layout.octopus_popup,null);
 
-            // create a focusable PopupWindow with the given layout
-            final PopupWindow displayFish = new PopupWindow(layout, popupWidth, popupHeight, true);
-
-            new CountDownTimer(10000,1000)
+            new CountDownTimer(gloatTime, increment)
             {
-
                 public void onTick(long millisUntilFinished)
                 {
-                    // empty on tick, just need this for the timer to work.
+                    caughtFish.setImageResource(R.drawable.caughtseptapus);
+
                 }
 
-                public void onFinish() {
-                    displayFish.dismiss();
+                public void onFinish()
+                {
+                    rewardFoogle(null);
                 }
             }.start();
 
-            displayFish.showAtLocation(layout, Gravity.CENTER, 0, 0);
         }
         //caught fish is Angler Fish
         else if(randomFish == 4)
         {
 
-            View layout = inflater.inflate(R.layout.angler_popup,null);
 
-            // create a focusable PopupWindow with the given layout
-            final PopupWindow displayFish = new PopupWindow(layout, popupWidth, popupHeight, true);
-
-            new CountDownTimer(10000,1000)
+            new CountDownTimer(gloatTime, increment)
             {
-
                 public void onTick(long millisUntilFinished)
                 {
-                    // empty on tick, just need this for the timer to work.
+                    caughtFish.setImageResource(R.drawable.caughtmetal);
+
                 }
 
-                public void onFinish() {
-                    displayFish.dismiss();
+                public void onFinish()
+                {
+                    rewardFoogle(null);
                 }
             }.start();
-
-            displayFish.showAtLocation(layout, Gravity.CENTER, 0, 0);
         }
         //caught fish is Shark
         else if(randomFish == 5)
         {
-            View layout = inflater.inflate(R.layout.shark_popup,null);
 
-            // create a focusable PopupWindow with the given layout
-            final PopupWindow displayFish = new PopupWindow(layout, popupWidth, popupHeight, true);
-
-            new CountDownTimer(10000,1000)
+            new CountDownTimer(gloatTime, increment)
             {
-
                 public void onTick(long millisUntilFinished)
                 {
-                    // empty on tick, just need this for the timer to work.
+                    caughtFish.setImageResource(R.drawable.caughtshark);
+
                 }
 
-                public void onFinish() {
-                    displayFish.dismiss();
+                public void onFinish()
+                {
+                    rewardFoogle(null);
                 }
             }.start();
-
-            displayFish.showAtLocation(layout, Gravity.CENTER, 0, 0);
         }
     }
 }
