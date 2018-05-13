@@ -29,7 +29,7 @@ public class Edit extends AppCompatActivity {
 
     ArrayAdapter<CharSequence> adapter;
     private ImageSwitcher simpleImageSwitcher;
-    Button btnNext;
+    ImageButton btnNext;
     EditText nameBox;
 
     int level = 1;
@@ -53,7 +53,7 @@ public class Edit extends AppCompatActivity {
 
 
 
-        btnNext = (Button) findViewById(R.id.button12);
+        btnNext = (ImageButton) findViewById(R.id.nextButton);
         simpleImageSwitcher = (ImageSwitcher) findViewById(R.id.imageSwitcher);
         simpleImageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
 

@@ -8,19 +8,6 @@
     tools:context="fooglesinc.foogles.Edit">
 
 
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="272dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="Next"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <ImageSwitcher
         android:id="@+id/imageSwitcher"
         android:layout_width="379dp"
@@ -36,6 +23,23 @@
         app:layout_constraintTop_toTopOf="parent">
 
     </ImageSwitcher>
+
+    <ImageButton
+        android:id="@+id/nextButton"
+        android:layout_width="240dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/invis"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageSwitcher"
+        app:layout_constraintVertical_bias="0.584"
+        app:srcCompat="@drawable/arrow" />
 
 
 </android.support.constraint.ConstraintLayout>
