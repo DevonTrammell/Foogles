@@ -2,6 +2,7 @@ package fooglesinc.foogles;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -55,51 +56,73 @@ public class foogle_fish extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    public void fishOnHook()
-//    {
-//        final ImageButton catchFish = (ImageButton) findViewById(R.id.CatchButton);
-//        final ImageView fishAvailable = (ImageView) findViewById(R.id.ExclamationPoint);
-//        fishAvailable.setVisibility(View.INVISIBLE);
-//        fishAvailable.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                fishAvailable.setVisibility(View.VISIBLE);
-//                catchFish.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view)
-//                    {
-//                        showFish();
-//                    }
-//                });
-//            }
-//        }, 3000);
-//    }
 
     public void startFishing(View view)
     {
         //make Start button invisible during gameplay
-        Button startButton = (Button) findViewById(R.id.startButton);
+        ImageButton startButton = (ImageButton) findViewById(R.id.startButton);
         startButton.setVisibility(View.INVISIBLE);
+
         //button to click when you want to catch the fish
-        final ImageButton catchFish = (ImageButton) findViewById(R.id.CatchButton);
+        //final ImageButton catchFish = (ImageButton) findViewById(R.id.CatchButton);
+
         //Exclamation Point image to alert user there is a fish on the hook - initially invisible then visible for 3 seconds and repeat
+
         final ImageView fishAvailable = (ImageView) findViewById(R.id.ExclamationPoint);
         fishAvailable.setVisibility(View.INVISIBLE);
-        fishAvailable.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                fishAvailable.setVisibility(View.VISIBLE);
-                catchFish.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view)
+
+        final ImageButton catchButton = (ImageButton) findViewById(R.id.CatchButton);
+
+
+        {
+            waitForBite(null);
+        }
+            //startFishing(null);
+    }
+
+    public void waitForBite(View view)
+    {
+        final ImageView fishAvailable = (ImageView) findViewById(R.id.ExclamationPoint);
+        fishAvailable.setVisibility(View.INVISIBLE);
+
+        final ImageButton catchButton = (ImageButton) findViewById(R.id.CatchButton);
+
+
+        new CountDownTimer(4000, 500)
+        {
+            public void onTick(long millisUntilFinished)
+            {
+                if (millisUntilFinished <= 3000)
+                {
+                    fishAvailable.setVisibility(View.VISIBLE);
+
+                    if (millisUntilFinished <= 2500)
                     {
-                        //display to the user the fish they caught
-                        showFish();
+                        catchButton.setVisibility(View.VISIBLE);
+
+                        catchButton.setOnClickListener(new View.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(View view)
+                            {
+                                showFish(null);
+
+                                rewardFoogle(null);
+                            }
+                        });
                     }
-                });
+                }
             }
-        }, 3000);
-        startFishing(null);
+
+            public void onFinish()
+            {
+                fishAvailable.setVisibility(View.INVISIBLE);
+
+                catchButton.setVisibility(View.INVISIBLE);
+
+                waitForBite(null);
+            }
+        }.start();
     }
 
     public int randomizeFish() {
@@ -115,94 +138,139 @@ public class foogle_fish extends AppCompatActivity {
         return caughtFish;
     }
 
-    public void showFish()
+    public void showFish(View view)
     {
+        long displayTime = 10000;
+        long displayIncrement = 1000;
+        int popupWidth = 960;
+        int popupHeight = 1140;
         //Get the instance of the LayoutInflater using the context of this activity
         LayoutInflater inflater = (LayoutInflater) foogle_fish.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
         //Inflate the view from a predefined XML layout (no need for root id, using entire layout)
-        View layout = inflater.inflate(R.layout.popuplayout,null);
+        //View layout = inflater.inflate(R.layout.popuplayout,null);
+
         int randomFish = randomizeFish();
 
         //caught fish is Sea Horse
-        if(randomFish == 1) {
-            String Text1 = getString(R.string.YouCaughtA);
-            String Text2 = getString(R.string.SHorseText);
-            ((TextView) layout.findViewById(R.id.SHorseText1)).setText(Text1);
-            ((TextView) layout.findViewById(R.id.SHorseText2)).setText(Text2);
+        if(randomFish == 1)
+        {
+            View layout = inflater.inflate(R.layout.shorse_popup,null);
+
             // create a focusable PopupWindow with the given layout
-            final PopupWindow pw = new PopupWindow(layout, 240, 285, true);
-            //Button to close the pop-up window
-            ((Button) layout.findViewById(R.id.close)).setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    pw.dismiss();
+            final PopupWindow displayFish = new PopupWindow(layout, popupWidth, popupHeight, true);
+
+            new CountDownTimer(10000,1000)
+            {
+
+                public void onTick(long millisUntilFinished)
+                {
+                    // empty on tick, just need this for the timer to work.
                 }
-            });
-            pw.showAtLocation(layout, Gravity.CENTER, 0, 0);
-        }
-        //caught fish is Barred Knifejaw
-        else if(randomFish == 2) {
-            String Text1 = getString(R.string.YouCaughtA);
-            String Text2 = getString(R.string.BarredText);
-            ((TextView) layout.findViewById(R.id.BarredText1)).setText(Text1);
-            ((TextView) layout.findViewById(R.id.BarredText2)).setText(Text2);
-            // create a focusable PopupWindow with the given layout
-            final PopupWindow pw = new PopupWindow(layout, 240, 285, true);
-            //Button to close the pop-up window
-            ((Button) layout.findViewById(R.id.close)).setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    pw.dismiss();
+
+                public void onFinish() {
+                    displayFish.dismiss();
                 }
-            });
-            pw.showAtLocation(layout, Gravity.CENTER, 0, 0);
-        }
-        //caught fish is Octopus
-        else if(randomFish == 3) {
-            String Text1 = getString(R.string.YouCaughtAn);
-            String Text2 = getString(R.string.OctopusText);
-            ((TextView) layout.findViewById(R.id.OctopusText1)).setText(Text1);
-            ((TextView) layout.findViewById(R.id.OctopusText2)).setText(Text2);
-            // create a focusable PopupWindow with the given layout
-            final PopupWindow pw = new PopupWindow(layout, 240, 285, true);
-            //Button to close the pop-up window
-            ((Button) layout.findViewById(R.id.close)).setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    pw.dismiss();
-                }
-            });
-            pw.showAtLocation(layout, Gravity.CENTER, 0, 0);
-        }
-        //caught fish is Angler Fish
-        else if(randomFish == 4) {
-            String Text1 = getString(R.string.YouCaughtAn);
-            String Text2 = getString(R.string.AnglerText);
-            ((TextView) layout.findViewById(R.id.AnglerText1)).setText(Text1);
-            ((TextView) layout.findViewById(R.id.AnglerText2)).setText(Text2);
-            // create a focusable PopupWindow with the given layout
-            final PopupWindow pw = new PopupWindow(layout, 240, 285, true);
-            //Button to close the pop-up window
-            ((Button) layout.findViewById(R.id.close)).setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    pw.dismiss();
-                }
-            });
-            pw.showAtLocation(layout, Gravity.CENTER, 0, 0);
-        }
-        //caught fish is Shark
-        else if(randomFish == 5) {
-            String Text1 = getString(R.string.YouCaughtA);
-            String Text2 = getString(R.string.SharkText);
-            ((TextView) layout.findViewById(R.id.SharkText1)).setText(Text1);
-            ((TextView) layout.findViewById(R.id.SharkText2)).setText(Text2);
-            // create a focusable PopupWindow with the given layout
-            final PopupWindow pw = new PopupWindow(layout, 240, 285, true);
-            //Button to close the pop-up window
-            ((Button) layout.findViewById(R.id.close)).setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    pw.dismiss();
-                }
-            });
-            pw.showAtLocation(layout, Gravity.CENTER, 0, 0);
+            }.start();
+
+            displayFish.showAtLocation(layout, Gravity.CENTER, 0, 0);
         }
 
+        //caught fish is Barred Knifejaw
+        else if(randomFish == 2)
+        {
+
+            View layout = inflater.inflate(R.layout.knifejaw_popup,null);
+
+            // create a focusable PopupWindow with the given layout
+            final PopupWindow displayFish = new PopupWindow(layout,  popupWidth, popupHeight, true);
+
+            new CountDownTimer(10000,1000)
+            {
+                public void onTick(long millisUntilFinished)
+                {
+
+                }
+
+                public void onFinish()
+                {
+                    displayFish.dismiss();
+                }
+            }.start();
+
+            displayFish.showAtLocation(layout, Gravity.CENTER, 0, 0);
+
+        }
+
+        //caught fish is Octopus
+        else if(randomFish == 3)
+        {
+            View layout = inflater.inflate(R.layout.octopus_popup,null);
+
+            // create a focusable PopupWindow with the given layout
+            final PopupWindow displayFish = new PopupWindow(layout, popupWidth, popupHeight, true);
+
+            new CountDownTimer(10000,1000)
+            {
+
+                public void onTick(long millisUntilFinished)
+                {
+                    // empty on tick, just need this for the timer to work.
+                }
+
+                public void onFinish() {
+                    displayFish.dismiss();
+                }
+            }.start();
+
+            displayFish.showAtLocation(layout, Gravity.CENTER, 0, 0);
+        }
+        //caught fish is Angler Fish
+        else if(randomFish == 4)
+        {
+
+            View layout = inflater.inflate(R.layout.angler_popup,null);
+
+            // create a focusable PopupWindow with the given layout
+            final PopupWindow displayFish = new PopupWindow(layout, popupWidth, popupHeight, true);
+
+            new CountDownTimer(10000,1000)
+            {
+
+                public void onTick(long millisUntilFinished)
+                {
+                    // empty on tick, just need this for the timer to work.
+                }
+
+                public void onFinish() {
+                    displayFish.dismiss();
+                }
+            }.start();
+
+            displayFish.showAtLocation(layout, Gravity.CENTER, 0, 0);
+        }
+        //caught fish is Shark
+        else if(randomFish == 5)
+        {
+            View layout = inflater.inflate(R.layout.shark_popup,null);
+
+            // create a focusable PopupWindow with the given layout
+            final PopupWindow displayFish = new PopupWindow(layout, popupWidth, popupHeight, true);
+
+            new CountDownTimer(10000,1000)
+            {
+
+                public void onTick(long millisUntilFinished)
+                {
+                    // empty on tick, just need this for the timer to work.
+                }
+
+                public void onFinish() {
+                    displayFish.dismiss();
+                }
+            }.start();
+
+            displayFish.showAtLocation(layout, Gravity.CENTER, 0, 0);
+        }
     }
 }
