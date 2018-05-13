@@ -38,7 +38,7 @@ public class whack_a_foogle extends AppCompatActivity
         Intent intent = getIntent();
         message = intent.getStringExtra(MainActivity.FOOGLE_NAME);
 
-        Button startButton = (Button) findViewById(R.id.whackStart);
+        ImageButton startButton = (ImageButton) findViewById(R.id.playWhackButton);
         startButton.setVisibility(View.VISIBLE);
 
         ImageButton topLeft = (ImageButton) findViewById(R.id.topLeftHole);
@@ -315,7 +315,7 @@ public class whack_a_foogle extends AppCompatActivity
     public void startGame(View view)
     {
 
-        Button startButton = (Button) findViewById(R.id.whackStart);
+        ImageButton startButton = (ImageButton) findViewById(R.id.playWhackButton);
 
         startButton.setVisibility(View.INVISIBLE);
 

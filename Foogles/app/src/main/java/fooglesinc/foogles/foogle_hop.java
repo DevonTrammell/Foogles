@@ -4,6 +4,7 @@ import android.animation.ObjectAnimator;
 import android.animation.TimeInterpolator;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Rect;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -24,6 +26,7 @@ public class foogle_hop extends AppCompatActivity {
 
     public static String message;
     public int score = 0;
+    public boolean isJumping = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,9 @@ public class foogle_hop extends AppCompatActivity {
 
         TextView scoreDisplay = findViewById(R.id.textView5);
         scoreDisplay.setText(Integer.toString(score));
+
+        ImageView flyingFoogle = (ImageView) findViewById(R.id.flyingFoogle);
+        flyingFoogle.setVisibility(View.INVISIBLE);
     }
     //TODO
     /*
@@ -55,6 +61,71 @@ public class foogle_hop extends AppCompatActivity {
 
 
 
+
+
+    public void makeJump(TimeInterpolator timeInterpolator)
+    {
+        ImageView foogle = (ImageView) findViewById(R.id.jumpingFoogle);
+
+        float height = 750;
+        float propertyStart = 0f;
+        float propertyEnd = -(height - (float)foogle.getHeight()/2);
+
+        isJumping = true;
+
+        String propertyName = "translationY";
+
+        ObjectAnimator jump = ObjectAnimator.ofFloat(foogle,propertyName, propertyStart, propertyEnd);
+
+        jump.setDuration(700);
+        jump.setRepeatCount(1);
+        jump.setRepeatMode(ObjectAnimator.REVERSE);
+        jump.setInterpolator(timeInterpolator);
+        jump.start();
+    }
+
+
+    public void jumping(View view)
+    {
+        ImageButton jump = (ImageButton) findViewById(R.id.jumpButton);
+
+        jump.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                final AccelerateDecelerateInterpolator accelerateDecelerateInterpolator = new AccelerateDecelerateInterpolator();
+
+
+                makeJump(accelerateDecelerateInterpolator);
+
+
+                new CountDownTimer(700, 700)
+                {
+                    public void onTick(long millisUntilFinished)
+                    {
+                        if(millisUntilFinished <= 700)
+                        {
+                            isJumping = true;
+
+                            ImageView foogle = (ImageView) findViewById(R.id.jumpingFoogle);
+
+                            foogle.setImageResource(R.drawable.mvp_walk3);
+                        }
+                    }
+
+                    public void onFinish()
+                    {
+                        isJumping = false;
+                    }
+                }.start();
+            }
+        });
+    }
+
+
+
+
     public void makeThrow(TimeInterpolator timeInterpolator)
     {
         ImageView thrownFoogle = (ImageView) findViewById(R.id.flyingFoogle);
@@ -68,19 +139,14 @@ public class foogle_hop extends AppCompatActivity {
 
         ObjectAnimator toss = ObjectAnimator.ofFloat(thrownFoogle,propertyName, propertyStart, propertyEnd);
 
-
+// was 2000
         toss.setDuration(2000);
-        //toss.setRepeatCount(1);
-        //toss.setRepeatMode(ObjectAnimator.REVERSE);
-        toss.setInterpolator(timeInterpolator);
         toss.start();
-
     }
 
-    public void tossFoogle(View view)
+    public void chooseDangerColor(View view)
     {
         ImageView thrownFoogle = (ImageView) findViewById(R.id.flyingFoogle);
-        thrownFoogle.setVisibility(View.VISIBLE);
 
         Random colorChoice = new Random();
 
@@ -110,76 +176,43 @@ public class foogle_hop extends AppCompatActivity {
             default:
                 thrownFoogle.setImageResource(R.drawable.green_walk3);
         }
+    }
 
-        //thrownFoogle.setVisibility(View.VISIBLE);
 
-        new CountDownTimer(3000, 3000)
+
+    public void tossFoogle(View view)
+    {
+        ImageView thrownFoogle = (ImageView) findViewById(R.id.flyingFoogle);
+
+        final ImageView jumpFoogle = (ImageView) findViewById(R.id.jumpingFoogle);
+
+        final boolean jumpCheck = isJumping;
+
+        thrownFoogle.setVisibility(View.VISIBLE);
+
+        chooseDangerColor(null);
+
+
+        final AccelerateDecelerateInterpolator accelerateDecelerateInterpolator = new AccelerateDecelerateInterpolator();
+
+        makeThrow(accelerateDecelerateInterpolator);
+
+        new CountDownTimer(2000, 100)
         {
-
             public void onTick(long millisUntilFinished)
             {
-                final AccelerateDecelerateInterpolator accelerateDecelerateInterpolator = new AccelerateDecelerateInterpolator();
-
-                makeThrow(accelerateDecelerateInterpolator);
+                if(millisUntilFinished <= 1400 && isJumping == false)
+                {
+                    jumpFoogle.setImageResource(R.drawable.hurtmvp);
+                }
             }
-
             public void onFinish()
             {
+                jumpFoogle.setImageResource(R.drawable.mvp_walk2);
                 tossFoogle(null);
             }
         }.start();
     }
-
-
-    public void makeJump(TimeInterpolator timeInterpolator)
-    {
-
-        ImageView foogle = (ImageView) findViewById(R.id.jumpingFoogle);
-        ImageView dangerFoogle = (ImageView) findViewById(R.id.flyingFoogle);
-
-        float height = 750;
-        float propertyStart = 0f;
-        float propertyEnd = -(height - (float)foogle.getHeight()/2);
-
-        String propertyName = "translationY";
-
-        ObjectAnimator jump = ObjectAnimator.ofFloat(foogle,propertyName, propertyStart, propertyEnd);
-
-        // foogle.setImageResource(R.drawable.sonic_walk3);
-
-        jump.setDuration(700);
-        jump.setRepeatCount(1);
-        jump.setRepeatMode(ObjectAnimator.REVERSE);
-        jump.setInterpolator(timeInterpolator);
-        jump.start();
-
-
-
-        //  foogle.setImageResource(R.drawable.sonic_walk3);
-    }
-
-
-    public void jumping(View view)
-    {
-
-        ImageView foogle = (ImageView) findViewById(R.id.jumpingFoogle);
-
-
-        Button jump = (Button) findViewById(R.id.jumpButton);
-
-
-
-        jump.setOnClickListener(new View.OnClickListener()
-        {
-           @Override
-            public void onClick(View view)
-           {
-               final AccelerateDecelerateInterpolator accelerateDecelerateInterpolator = new AccelerateDecelerateInterpolator();
-               makeJump(accelerateDecelerateInterpolator);
-           }
-        });
-
-
 
 
 //      EXAMPLE ANIMATION CODE FROM         http://android-er.blogspot.com/2015/10/interpolator-effect-on-objectanimator.html
@@ -195,34 +228,12 @@ public class foogle_hop extends AppCompatActivity {
 //        });
 
 
-// collision detection from  http://proquest.safaribooksonline.com.summit.csuci.edu:2048/book/programming/android/9781785880957/firstchapter#X2ludGVybmFsX0h0bWxWaWV3P3htbGlkPTk3ODE3ODU4ODA5NTclMkY0MDNiOGJmOV8wMzcxXzQxZjRfYTEzYl9jNjE4Y2VmNmViYWZfeGh0bWwmcXVlcnk9
-//        rectangle1 = {x: 5, y: 5, width: 50, height: 50}
-//        rectangle2 = {x: 20, y: 10, width: 10, height: 10}
-//
-//        if(rectangle1.x < rectangle2.x + rectangle2.width
-//          && rectangle1.width > rectangle2.x
-//          && rectangle1.y < rectangle2.y + rectangle2.height
-//          && rectangle1.height + rectangle1.y > rectangle2.y)
-//        {
-//            //Bounding Box Collision Detected
-//        }
-//
-//// Taking the values from our variables
-//        if (5 < 30 && 55 > 20 && 5 < 20 && 55 > 10) {
-//            // Bounding Box Collision Detected!
-//        }
-
-
-
-
-
-    }
 
 
     public void startGame(View view){
 
 
-        Button startButton = (Button) findViewById(R.id.button25);
+        ImageButton startButton = (ImageButton) findViewById(R.id.playHopButton);
 
         startButton.setVisibility(View.INVISIBLE);
 

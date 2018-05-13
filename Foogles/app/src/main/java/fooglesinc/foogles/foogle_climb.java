@@ -195,7 +195,7 @@ public class foogle_climb extends AppCompatActivity {
     public void startGame(View view){
 
 
-        Button startButton = (Button) findViewById(R.id.button25);
+        ImageButton startButton = (ImageButton) findViewById(R.id.playClimbButton);
         ImageButton leftButton = (ImageButton) findViewById(R.id.moveLeft);
         ImageButton rightButton = (ImageButton) findViewById(R.id.moveRight);
 
