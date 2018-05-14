@@ -259,7 +259,7 @@ public class foogle_hop extends AppCompatActivity {
                 SharedPreferences sp = getSharedPreferences("MyPrefs",0);
                 SharedPreferences.Editor editor = sp.edit();
                 int n = sp.getInt("score",0);
-                n += score;
+                n += 25;
                 editor.putInt("score",n);
                 editor.apply();
                 rewardFoogle(null);

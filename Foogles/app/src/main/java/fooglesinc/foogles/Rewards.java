@@ -27,43 +27,38 @@ public class Rewards extends AppCompatActivity {
 
         Intent intent = getIntent();
         lvl = findViewById(R.id.LevelView);
-        SharedPreferences sp = getSharedPreferences( "MyPrefs",Context.MODE_PRIVATE);
-        int n = sp.getInt("level",0);
-        if(sp.getInt("score",0) == (sp.getInt("score",0) + 100))
-        {
-            n++;
-            lvl.setText("You leveld up, your level is now" + n);
-        }
-        else
-        {
-            lvl.setText("Almost there keep training");
-        }
-
-
-
-
+        SharedPreferences sp = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
-        editor.putInt("level",n);
-        editor.apply();
-        
+        int n = sp.getInt("level", 0);
+        int x = sp.getInt("score", 0);
+        int y = sp.getInt("pScore", 0);
+        if (x >= y + 10) {
+            n++;
+            lvl.setText("Level up! You are now level " + n);
+            editor.putInt("level", n);
+            editor.putInt("score", 0);
+            editor.putInt("pScore", 0);
+            editor.apply();
 
-    }
+        } else {
+            lvl.setText("You're doing great, keep it up!");
+        }
 
 
 //        String message = intent.getStringExtra(MainActivity.FOOGLE_NAME);
-//        if (message.equals("win"))
-//        {
-//            TextView textView = findViewById(R.id.textView3);
-//            String displayedMessage = message + " - hurts being this good!";
-//            textView.setText(displayedMessage);
-//
+//        if (message.equals("win")) {
+//            //TextView textView = findViewById(R.id.LevelView);
+//            String displayedMessage = "Congratulations You've Won!";
+//            lvl.setText(displayedMessage);
 //        }
-//        else if (message.equals("loss"))
-//        {
-//            TextView textView = findViewById(R.id.textView3);
+
+//        } else if (message.equals("loss")) {
+//            //TextView textView = findViewById(R.id.textView3);
 //            String displayedMessage = message + " Whoops maybe you should try professional Foogle Fishing!";
-//            textView.setText(displayedMessage);
+//            lvl.setText(displayedMessage);
 //        }
+
+    }
 //        else
 //        {
 //            TextView textView = findViewById(R.id.textView3);

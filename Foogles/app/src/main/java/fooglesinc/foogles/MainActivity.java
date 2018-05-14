@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String MYPREFS = "MyPrefs";
     public static final String LEVEL = "level";
     public static final String SCORE = "score";
+    public static final String PSCORE = "pScore";
     private ImageSwitcher simpleImageSwitcher;
     Button btnNext;
     EditText FoogleRanchName;
@@ -63,9 +64,16 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences sp = getSharedPreferences(MYPREFS, 0);
         SharedPreferences.Editor editor = sp.edit();
-        editor.putInt(LEVEL, 1);
-        editor.putInt(SCORE, 0);
+
+        int n = sp.getInt(LEVEL, 1);
+        int x = sp.getInt(SCORE,0);
+        int y = sp.getInt(PSCORE,0);
+        editor.putInt(LEVEL, n);
+        editor.putInt(SCORE,x);
+        editor.putInt(PSCORE,y);
         editor.apply();
+
+
 
         //MediaPlayer ring = create(MainActivity.this, R.raw.mariothemesong);
         //ring.start();
