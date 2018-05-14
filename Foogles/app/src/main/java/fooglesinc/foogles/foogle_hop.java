@@ -67,7 +67,7 @@ public class foogle_hop extends AppCompatActivity {
     {
         ImageView foogle = (ImageView) findViewById(R.id.jumpingFoogle);
 
-        float height = 750;
+        float height = 800;
         float propertyStart = 0f;
         float propertyEnd = -(height - (float)foogle.getHeight()/2);
 
@@ -99,19 +99,21 @@ public class foogle_hop extends AppCompatActivity {
 
                 makeJump(accelerateDecelerateInterpolator);
 
+                // The jumping duration is 700 millis one way, 1400 total.
+                // By waiting 1500 millis we let the flag get set after the jump is done.
+                // This gives more believable hit detection.
 
-                new CountDownTimer(700, 700)
+                new CountDownTimer(1500, 1500)
                 {
                     public void onTick(long millisUntilFinished)
                     {
-                        if(millisUntilFinished <= 700)
+                        if(millisUntilFinished <= 1500)
                         {
-                            isJumping = true;
-
                             ImageView foogle = (ImageView) findViewById(R.id.jumpingFoogle);
 
                             foogle.setImageResource(R.drawable.mvp_walk3);
                         }
+
                     }
 
                     public void onFinish()
@@ -119,6 +121,7 @@ public class foogle_hop extends AppCompatActivity {
                         isJumping = false;
                     }
                 }.start();
+
             }
         });
     }
@@ -204,6 +207,7 @@ public class foogle_hop extends AppCompatActivity {
                 if(millisUntilFinished <= 1400 && isJumping == false)
                 {
                     jumpFoogle.setImageResource(R.drawable.hurtmvp);
+                    score -= 1;
                 }
             }
             public void onFinish()
