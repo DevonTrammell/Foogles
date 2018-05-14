@@ -111,7 +111,7 @@ public class foogle_hop extends AppCompatActivity {
                         {
                             ImageView foogle = (ImageView) findViewById(R.id.jumpingFoogle);
 
-                            foogle.setImageResource(R.drawable.mvp_walk3);
+                            foogle.setImageResource(R.drawable.sonic_walk3);
                         }
 
                     }
@@ -206,13 +206,13 @@ public class foogle_hop extends AppCompatActivity {
             {
                 if(millisUntilFinished <= 1400 && isJumping == false)
                 {
-                    jumpFoogle.setImageResource(R.drawable.hurtmvp);
+                    jumpFoogle.setImageResource(R.drawable.hurtsonic);
                     score -= 1;
                 }
             }
             public void onFinish()
             {
-                jumpFoogle.setImageResource(R.drawable.mvp_walk2);
+                jumpFoogle.setImageResource(R.drawable.sonic_walk2);
                 tossFoogle(null);
             }
         }.start();
