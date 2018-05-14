@@ -2,6 +2,7 @@ package fooglesinc.foogles;
 
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -263,6 +264,13 @@ public class foogle_climb extends AppCompatActivity {
             }
 
             public void onFinish() {
+                SharedPreferences sp = getSharedPreferences("MyPrefs",0);
+                SharedPreferences.Editor editor = sp.edit();
+                int n = sp.getInt("score",0);
+                editor.putInt("pScore", n);
+                n += score;
+                editor.putInt("score",n);
+                editor.apply();
                 rewardFoogle(null);
                 score = 0;
             }

@@ -79,19 +79,19 @@ public class Racing extends AppCompatActivity {
         ObjectAnimator run2 = ObjectAnimator.ofFloat(comp2,propertyName, propertyStart2, propertyEnd2);
         ObjectAnimator runMain = ObjectAnimator.ofFloat(mainFoog,propertyName, propertyStartMain, propertyEndMain);
 
-        if(difficulty == 0)
+        if(difficulty > 5)
         {
             run1.setDuration(10000);
             run2.setDuration(9000);
             runMain.setDuration(4000);
         }
-        else if(difficulty == 1)
+        else if(difficulty >= 3 && difficulty <= 5)
         {
             run1.setDuration(8000);
             run2.setDuration(7000);
             runMain.setDuration(7500);
         }
-        else if(difficulty == 2)
+        else if(difficulty < 3)
         {
             run1.setDuration(3000);
             run2.setDuration(4000);
@@ -160,7 +160,7 @@ public class Racing extends AppCompatActivity {
     }
     public void determineWinOrLose()
     {
-        if (difficulty < 2)
+        if (difficulty != 0)
         {
             Intent intent = new Intent(this, Rewards.class);
             intent.putExtra(MainActivity.FOOGLE_NAME, "win");

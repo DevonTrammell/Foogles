@@ -118,7 +118,7 @@ public class whack_a_foogle extends AppCompatActivity
                             public void onClick(View view)
                             {
                                 topLeft.setImageResource(R.drawable.whack_hit);
-                                whackScore += 5;
+                                whackScore += 1;
                                 scoreBox.setText(Integer.toString(whackScore));
                             }
                         });
@@ -154,7 +154,7 @@ public class whack_a_foogle extends AppCompatActivity
                             public void onClick(View view)
                             {
                                 topRight.setImageResource(R.drawable.whack_hit);
-                                whackScore += 5;
+                                whackScore += 1;
                                 scoreBox.setText(Integer.toString(whackScore));
                             }
                         });
@@ -189,7 +189,7 @@ public class whack_a_foogle extends AppCompatActivity
                             public void onClick(View view)
                             {
                                 center.setImageResource(R.drawable.whack_hit);
-                                whackScore += 5;
+                                whackScore += 1;
                                 scoreBox.setText(Integer.toString(whackScore));
                             }
                         });
@@ -223,7 +223,7 @@ public class whack_a_foogle extends AppCompatActivity
                             public void onClick(View view)
                             {
                                 bottomLeft.setImageResource(R.drawable.whack_hit);
-                                whackScore += 5;
+                                whackScore += 1;
                                 scoreBox.setText(Integer.toString(whackScore));
                             }
                         });
@@ -257,7 +257,7 @@ public class whack_a_foogle extends AppCompatActivity
                             public void onClick(View view)
                             {
                                 bottomRight.setImageResource(R.drawable.whack_hit);
-                                whackScore += 5;
+                                whackScore += 1;
                                 scoreBox.setText(Integer.toString(whackScore));
                             }
                         });
@@ -292,7 +292,7 @@ public class whack_a_foogle extends AppCompatActivity
                             public void onClick(View view)
                             {
                                 topLeft.setImageResource(R.drawable.whack_hit);
-                                whackScore += 5;
+                                whackScore += 1;
                                 scoreBox.setText(Integer.toString(whackScore));
                             }
                         });
@@ -337,6 +337,7 @@ public class whack_a_foogle extends AppCompatActivity
                 SharedPreferences sp = getSharedPreferences("MyPrefs",0);
                 SharedPreferences.Editor editor = sp.edit();
                 int n = sp.getInt("score",0);
+                editor.putInt("pScore", n);
                 n += whackScore;
                 editor.putInt("score",n);
                 editor.apply();
