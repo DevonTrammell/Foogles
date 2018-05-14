@@ -137,7 +137,7 @@ public class Racing extends AppCompatActivity {
         comp2walk.start();
 
 
-        final ProgressBar progressBar = (ProgressBar)findViewById(R.id.racetimer);
+        //final ProgressBar progressBar = (ProgressBar)findViewById(R.id.racetimer);
 
         //10 second countdown by 1 second intervals
         new CountDownTimer(10000, 1000)
@@ -146,7 +146,7 @@ public class Racing extends AppCompatActivity {
 
             public void onTick(long millisUntilFinished)
             {
-                progressBar.incrementProgressBy(1); //progressBar's android:max in the XML is set to 30, this increments until max is hit
+                //progressBar.incrementProgressBy(1); //progressBar's android:max in the XML is set to 30, this increments until max is hit
             }
 
             public void onFinish() {
