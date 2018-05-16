@@ -307,9 +307,6 @@ public class whack_a_foogle extends AppCompatActivity
                 }
             }.start();
         }
-
-
-
     }
 
     public void startGame(View view)

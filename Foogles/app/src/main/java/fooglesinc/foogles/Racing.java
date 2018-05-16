@@ -1,7 +1,9 @@
 package fooglesinc.foogles;
 
 import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -23,6 +25,8 @@ import android.widget.TextView;
 
 public class Racing extends AppCompatActivity {
     private int difficulty;
+    private int level;
+    private int howClose;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,9 +35,13 @@ public class Racing extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        SharedPreferences sp = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        level = sp.getInt("level", 0);
+
         setContentView(R.layout.activity_tournament_race);
         Intent intent = getIntent();
-        difficulty = intent.getIntExtra(MainActivity.DIFFICULTY,2);
+        difficulty = intent.getIntExtra(MainActivity.DIFFICULTY,10);
 
         final ImageView mainFoog = (ImageView) findViewById(R.id.mainfoogle);
         mainFoog.setBackgroundResource(R.drawable.purple_walk1);
@@ -79,23 +87,31 @@ public class Racing extends AppCompatActivity {
         ObjectAnimator run2 = ObjectAnimator.ofFloat(comp2,propertyName, propertyStart2, propertyEnd2);
         ObjectAnimator runMain = ObjectAnimator.ofFloat(mainFoog,propertyName, propertyStartMain, propertyEndMain);
 
-        if(difficulty > 5)
+        howClose = (level-difficulty);
+
+        if(howClose > 0)
         {
             run1.setDuration(10000);
             run2.setDuration(9000);
             runMain.setDuration(4000);
         }
-        else if(difficulty >= 3 && difficulty <= 5)
+        else if (howClose == 0)
         {
-            run1.setDuration(8000);
+            run1.setDuration(6500);
+            run2.setDuration(10000);
+            runMain.setDuration(7000);
+        }
+        else if(howClose == -1)
+        {
+            run1.setDuration(10000);
             run2.setDuration(7000);
             runMain.setDuration(7500);
         }
-        else if(difficulty < 3)
+        else if(howClose < -1)
         {
             run1.setDuration(3000);
             run2.setDuration(4000);
-            runMain.setDuration(7000);
+            runMain.setDuration(10000);
         }
 
         run1.start();
@@ -160,20 +176,17 @@ public class Racing extends AppCompatActivity {
     }
     public void determineWinOrLose()
     {
-        if (difficulty != 0)
+        if (howClose >= 0)
         {
             Intent intent = new Intent(this, Rewards.class);
-            intent.putExtra(MainActivity.FOOGLE_NAME, "win");
-
-            //pass score to next activity
-            //to be saved in foogle stats
+            intent.putExtra(MainActivity.TOURNEY,difficulty);
 
             startActivity(intent);
         }
         else
         {
             Intent intent = new Intent(this, Rewards.class);
-            intent.putExtra(MainActivity.FOOGLE_NAME, "loss");
+            intent.putExtra(MainActivity.TOURNEY, 0);
 
             //pass score to next activity
             //to be saved in foogle stats

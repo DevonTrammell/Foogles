@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -25,6 +26,8 @@ public class Rewards extends AppCompatActivity {
         setContentView(R.layout.activity_rewards);
 
 
+        ImageView icon = findViewById(R.id.imageView15);
+        ImageView fishy = findViewById(R.id.fishView);
         Intent intent = getIntent();
         lvl = findViewById(R.id.LevelView);
         SharedPreferences sp = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
@@ -39,10 +42,60 @@ public class Rewards extends AppCompatActivity {
             editor.putInt("score", 0);
             editor.putInt("pScore", 0);
             editor.apply();
-
-        } else {
-            lvl.setText("You're doing great, keep it up!");
+            icon.setBackgroundResource(R.drawable.pet);
         }
+        else {// now check if we did a tournament.
+            int tourney = intent.getIntExtra(MainActivity.TOURNEY, -1);
+            if (tourney != -1) {
+                //we either won a tourey, or we lost
+
+                if (tourney == 0) {
+                    icon.setBackgroundResource(R.drawable.grandpa_foogs);
+                    lvl.setText("Never Give Up! Never Surrender!!! Try harder though.");
+                } else if (tourney == 5) {
+                    icon.setBackgroundResource(R.drawable.medal_bronze);
+                    lvl.setText("Congrats! The game just started though, go for the silver!");
+                } else if (tourney == 10) {
+                    icon.setBackgroundResource(R.drawable.medal_silver);
+                    lvl.setText("You did it! Now go for gold!");
+                } else if (tourney == 15) {
+                    icon.setBackgroundResource(R.drawable.medal_gold);
+                    lvl.setText("Welp, you beat the game! Now just wait for Foogles 2.0!");
+                } else {
+                    icon.setBackgroundResource(R.drawable.pet);
+                    lvl.setText("YOU WON A TOURNAMENT! HOLY COW! CALL GRANDPA! " + tourney);
+                }
+            }
+            int fish = intent.getIntExtra(MainActivity.FISH, -1);
+            if (fish != -1) {
+                switch (fish) {
+                    case 1:
+                        fishy.setBackgroundResource(R.drawable.fish_seahorse);
+                        break;
+                    case 2:
+                        fishy.setBackgroundResource(R.drawable.fish_barred);
+                        break;
+                    case 3:
+                        fishy.setBackgroundResource(R.drawable.fish_octo);
+                        break;
+                    case 4:
+                        fishy.setBackgroundResource(R.drawable.fish_football);
+                        break;
+                    case 5:
+                        fishy.setBackgroundResource(R.drawable.fish_shark);
+                        break;
+                    default:
+                        icon.setBackgroundResource(R.drawable.pet);
+                        break;
+                }
+                lvl.setText("WOAH! Nice Catch! Got a real Fish master over here!");
+            }
+            if (fish == -1 && tourney == -1) {
+                icon.setBackgroundResource(R.drawable.grandpa_foogs);
+                lvl.setText("Don't give up kiddo! keep it up!" + n);
+            }
+        }
+
 
 
 //        String message = intent.getStringExtra(MainActivity.FOOGLE_NAME);

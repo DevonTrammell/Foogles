@@ -21,6 +21,7 @@ import java.util.Random;
 public class foogle_fish extends AppCompatActivity {
 
     public static String message;
+    public static int randomFish;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -52,7 +53,7 @@ public class foogle_fish extends AppCompatActivity {
     public void rewardFoogle(View view)
     {
         Intent intent = new Intent(this, Rewards.class);
-        intent.putExtra(MainActivity.FOOGLE_NAME, message);
+        intent.putExtra(MainActivity.FISH, randomFish);
         startActivity(intent);
     }
 
@@ -135,7 +136,7 @@ public class foogle_fish extends AppCompatActivity {
         int caughtFish;
 
         caughtFish = fishChoice.nextInt((max - min) + 1) + min;
-
+        randomFish = caughtFish;
         return caughtFish;
     }
 

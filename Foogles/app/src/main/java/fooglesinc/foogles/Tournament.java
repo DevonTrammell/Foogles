@@ -26,22 +26,22 @@ public class Tournament extends AppCompatActivity {
     public void littleLeague(View view) {
         Intent intent = new Intent(this, Racing.class);
         SharedPreferences sp = getSharedPreferences(MYPREFS,0);
-        int difficulty = sp.getInt(LEVEL,0); // this will tell us on the next page how hard the race should be.
-        intent.putExtra(DIFFICULTY, difficulty);
+        //int difficulty = sp.getInt(LEVEL,1); // this will tell us on the next page how hard the race should be.
+        intent.putExtra(DIFFICULTY, 5);
         startActivity(intent);
     }
     public void bigLeague(View view) {
         Intent intent = new Intent(this, Racing.class);
         SharedPreferences sp = getSharedPreferences(MYPREFS,0);
-        int difficulty = sp.getInt(LEVEL,1);
-        intent.putExtra(DIFFICULTY, difficulty);
+        //int difficulty = sp.getInt(LEVEL,5);
+        intent.putExtra(DIFFICULTY, 10);
         startActivity(intent);
     }
     public void reallyBigLeague(View view) {
         Intent intent = new Intent(this, Racing.class);
         SharedPreferences sp = getSharedPreferences(MYPREFS,0);
-        int difficulty = sp.getInt(LEVEL,2);
-        intent.putExtra(DIFFICULTY, difficulty);
+        //int difficulty = sp.getInt(LEVEL,10);
+        intent.putExtra(DIFFICULTY, 15);
         startActivity(intent);
     }
 }

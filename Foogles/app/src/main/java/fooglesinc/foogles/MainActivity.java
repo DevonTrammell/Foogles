@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     public static final String WHEN_STATUS = "com.example.foogles.WHEN";
     public static final String PET_STATUS = "com.example.foogles.PET";
     public static final String DIFFICULTY = "com.example.foogles.DIFF";
+    public static final String FISH = "com.example.foogles.FISH";
+    public static final String TOURNEY = "com.example.foogles.RACE";
     //public static final String CHANGELEVEL = "com.example.foogles.LVL";
     //public static final String SCORE = "com.example.foogles.SCORE";
     public static final String MYPREFS = "MyPrefs";

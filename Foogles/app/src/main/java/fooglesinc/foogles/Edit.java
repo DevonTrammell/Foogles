@@ -34,7 +34,7 @@ public class Edit extends AppCompatActivity {
 
     int level = 1;
 
-    int imageIds[] = {R.drawable.mono_walk, R.drawable.blue_walk, R.drawable.green_walk, R.drawable.mvp_walk, R.drawable.purple_walk, R.drawable.sonic_walk1};
+    int imageIds[] = {R.drawable.mono_walk1, R.drawable.green_walk1, R.drawable.mvp_walk1, R.drawable.purple_walk1, R.drawable.sonic_walk1, R.drawable.fish_seahorse,R.drawable.fish_football,R.drawable.fish_octo,R.drawable.fish_shark,R.drawable.fish_barred,R.drawable.grandpa_foogs};
     int count = imageIds.length;
     int currentIndex = 0;
 
