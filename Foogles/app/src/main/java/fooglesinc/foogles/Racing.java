@@ -97,9 +97,9 @@ public class Racing extends AppCompatActivity {
         }
         else if (howClose == 0)
         {
-            run1.setDuration(6500);
+            run1.setDuration(9500);
             run2.setDuration(10000);
-            runMain.setDuration(7000);
+            runMain.setDuration(9300);
         }
         else if(howClose == -1)
         {

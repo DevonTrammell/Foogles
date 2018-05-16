@@ -52,13 +52,13 @@ public class Rewards extends AppCompatActivity {
                 if (tourney == 0) {
                     icon.setBackgroundResource(R.drawable.grandpa_foogs);
                     lvl.setText("Never Give Up! Never Surrender!!! Try harder though.");
-                } else if (tourney == 5) {
+                } else if (tourney == 3) {
                     icon.setBackgroundResource(R.drawable.medal_bronze);
                     lvl.setText("Congrats! The game just started though, go for the silver!");
-                } else if (tourney == 10) {
+                } else if (tourney == 6) {
                     icon.setBackgroundResource(R.drawable.medal_silver);
                     lvl.setText("You did it! Now go for gold!");
-                } else if (tourney == 15) {
+                } else if (tourney == 10) {
                     icon.setBackgroundResource(R.drawable.medal_gold);
                     lvl.setText("Welp, you beat the game! Now just wait for Foogles 2.0!");
                 } else {
@@ -92,7 +92,7 @@ public class Rewards extends AppCompatActivity {
             }
             if (fish == -1 && tourney == -1) {
                 icon.setBackgroundResource(R.drawable.grandpa_foogs);
-                lvl.setText("Don't give up kiddo! keep it up!" + n);
+                lvl.setText("Don't give up kiddo! keep it up!");
             }
         }
 
